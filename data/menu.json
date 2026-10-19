@@ -1,0 +1,286 @@
+{
+  "_info": "Kardias Cunda menü verisi. Fiyatları ve ürünleri buradan güncelleyin. price: tek fiyat, prices: birden fazla seçenek, priceText: 'Sorunuz' gibi metin. tags: favori, vejetaryen, vegan, acili, glutensiz, sef. image: ürün fotoğrafı — Unsplash görsel kimliği (photo-...) ya da kendi dosyanızın yolu (ör. img/menu/pizza.jpg). Kategorilerde section (mutfak/bar), kapak görseli image ve pair (ürün detayında \"yanına yakışır\" önerilen kategori) bulunur; sıralama menüdeki sıradır.",
+  "currency": "₺",
+  "sections": [
+    {"id": "mutfak", "name": {"tr": "Mutfak", "en": "Kitchen"}, "desc": {"tr": "Taş fırından, Ege bahçelerinden ve sabah tezgâhından", "en": "From the stone oven, Aegean gardens and the morning catch"}},
+    {"id": "bar", "name": {"tr": "Bar", "en": "Bar"}, "desc": {"tr": "Rakı sofrası, Ege bağları ve gün batımı kokteylleri", "en": "Rakı table, Aegean vineyards and sunset cocktails"}}
+  ],
+  "categories": [
+    {
+      "id": "kahvalti",
+      "pair": "sicak",
+      "section": "mutfak",
+      "image": "photo-1533089860892-a7c6f0a88666",
+      "name": {"tr": "Kahvaltı", "en": "Breakfast"},
+      "note": {"tr": "Otel misafirlerimiz ve dışarıdan gelen misafirlerimiz için, 09:00 – 12:00", "en": "For hotel guests and visitors, 09:00 – 12:00"},
+      "items": [
+        {"name": {"tr": "Serpme Ege Kahvaltısı", "en": "Aegean Breakfast Spread"}, "desc": {"tr": "Ezine ve keçi peynirleri, Ayvalık zeytinleri, ev reçelleri, köy yumurtası, bal-kaymak, söğüş ve sınırsız çay (2 kişilik)", "en": "Ezine & goat cheeses, Ayvalık olives, homemade jams, free-range eggs, honey & clotted cream, fresh vegetables, bottomless tea (for 2)"}, "price": 1450, "tags": ["favori", "vejetaryen"], "image": "photo-1504754524776-8f4f37790ca0"},
+        {"name": {"tr": "Menemen", "en": "Menemen"}, "desc": {"tr": "Köy domatesi, sivri biber ve tereyağında yumurta", "en": "Village tomatoes, green peppers and eggs in butter"}, "price": 320, "tags": ["vejetaryen", "glutensiz"], "image": "photo-1590412200988-a436970781fa"},
+        {"name": {"tr": "Ayvalık Tostu", "en": "Ayvalık Toast"}, "desc": {"tr": "Sucuk, kaşar, salam, turşu, domates ve özel sos; ev yapımı tost ekmeğinde", "en": "Sucuk, kashar, salami, pickles, tomato and house sauce in homemade bread"}, "price": 340, "tags": ["favori"], "image": "photo-1559054663-e8d23213f55c"},
+        {"name": {"tr": "Gözleme", "en": "Gözleme"}, "desc": {"tr": "El açması yufkada peynirli, patatesli veya ıspanaklı", "en": "Hand-rolled flatbread with cheese, potato or spinach"}, "price": 280, "tags": ["vejetaryen"], "image": "photo-1529006557810-274b9b2fc783"}
+      ]
+    },
+    {
+      "id": "baslangic",
+      "pair": "raki",
+      "section": "mutfak",
+      "image": "photo-1600891964599-f61ba0e24092",
+      "name": {"tr": "Başlangıçlar", "en": "Starters"},
+      "items": [
+        {"name": {"tr": "Sıcak Peynirli Börek", "en": "Warm Cheese Börek"}, "desc": {"tr": "Çıtır yufka, Ezine peyniri ve taze nane", "en": "Crispy pastry, Ezine cheese and fresh mint"}, "price": 290, "tags": ["vejetaryen"], "image": "photo-1606491956689-2ea866880c84"},
+        {"name": {"tr": "Kalamar Tava", "en": "Fried Calamari"}, "desc": {"tr": "Çıtır kalamar halkaları, tarator sos", "en": "Crispy calamari rings with tarator sauce"}, "price": 520, "tags": ["favori"], "image": "photo-1600891964599-f61ba0e24092"},
+        {"name": {"tr": "Karides Güveç", "en": "Shrimp Casserole"}, "desc": {"tr": "Tereyağı, sarımsak, domates ve kaşarla fırında", "en": "Baked with butter, garlic, tomato and kashar cheese"}, "price": 560, "tags": ["sef", "glutensiz"], "image": "photo-1625943553852-781c6dd46faa"},
+        {"name": {"tr": "Paçanga Böreği", "en": "Paçanga Börek"}, "desc": {"tr": "Pastırma, kaşar ve közlenmiş biber", "en": "Pastırma, kashar cheese and roasted pepper"}, "price": 340, "image": "photo-1601050690597-df0568f70950"},
+        {"name": {"tr": "Sarımsaklı Ekmek", "en": "Garlic Bread"}, "desc": {"tr": "Taş fırından, zeytinyağı ve kekik ile", "en": "From the stone oven with olive oil and thyme"}, "price": 180, "tags": ["vejetaryen"], "image": "photo-1573140401552-3fab0b24306f"}
+      ]
+    },
+    {
+      "id": "meze",
+      "pair": "raki",
+      "section": "mutfak",
+      "image": "photo-1530062845289-9109b2c9c868",
+      "name": {"tr": "Soğuk Mezeler", "en": "Cold Mezes"},
+      "items": [
+        {"name": {"tr": "Girit Ezmesi", "en": "Cretan Dip"}, "desc": {"tr": "Lor, beyaz peynir, ceviz, dereotu ve zeytinyağı", "en": "Curd cheese, feta, walnut, dill and olive oil"}, "price": 260, "tags": ["favori", "vejetaryen", "glutensiz"], "image": "photo-1559561853-08451507cbe7"},
+        {"name": {"tr": "Deniz Börülcesi", "en": "Samphire"}, "desc": {"tr": "Limonlu, sarımsaklı zeytinyağı ile", "en": "With lemon and garlic olive oil"}, "price": 240, "tags": ["vegan", "glutensiz"], "image": "photo-1529059997568-3d847b1154f0"},
+        {"name": {"tr": "Közlenmiş Patlıcan", "en": "Smoked Aubergine"}, "desc": {"tr": "Odun ateşinde közlenmiş, yoğurt ve sarımsak", "en": "Fire-roasted, with yoghurt and garlic"}, "price": 240, "tags": ["vejetaryen", "glutensiz"], "image": "photo-1476224203421-9ac39bcb3327"},
+        {"name": {"tr": "Haydari", "en": "Haydari"}, "desc": {"tr": "Süzme yoğurt, nane, dereotu ve kuru biber", "en": "Strained yoghurt, mint, dill and dried chili"}, "price": 220, "tags": ["vejetaryen", "glutensiz"], "image": "photo-1505576633757-0ac1084af824"},
+        {"name": {"tr": "Ayvalık Otları", "en": "Ayvalık Wild Greens"}, "desc": {"tr": "Radika, şevket-i bostan, turp otu — mevsimine göre, zeytinyağı ve limonla", "en": "Radicchio, golden thistle and seasonal wild greens with olive oil and lemon"}, "price": 260, "tags": ["sef", "vegan", "glutensiz"], "image": "photo-1607532941433-304659e8198a"},
+        {"name": {"tr": "Fava", "en": "Fava"}, "desc": {"tr": "Bakla ezmesi, kırmızı soğan ve dereotu", "en": "Broad bean purée, red onion and dill"}, "price": 220, "tags": ["vegan", "glutensiz"], "image": "photo-1530062845289-9109b2c9c868"},
+        {"name": {"tr": "Lakerda", "en": "Lakerda"}, "desc": {"tr": "Tuzlanmış palamut, kırmızı soğan ve zeytinyağı", "en": "Cured bonito with red onion and olive oil"}, "price": 420, "tags": ["glutensiz"], "image": "photo-1599084993091-1cb5c0721cc6"},
+        {"name": {"tr": "Atom", "en": "Atom"}, "desc": {"tr": "Süzme yoğurt, tereyağında kızdırılmış kuru acı biber", "en": "Strained yoghurt with dried chili sizzled in butter"}, "price": 230, "tags": ["acili", "vejetaryen", "glutensiz"], "image": "photo-1600891964599-f61ba0e24092"},
+        {"name": {"tr": "Cacık", "en": "Cacık"}, "desc": {"tr": "Yoğurt, salatalık, nane ve zeytinyağı", "en": "Yoghurt, cucumber, mint and olive oil"}, "price": 180, "tags": ["vejetaryen", "glutensiz"], "image": "photo-1571212515416-fef01fc43637"},
+        {"name": {"tr": "Zeytinyağlı Enginar", "en": "Artichoke in Olive Oil"}, "desc": {"tr": "Bakla, havuç ve dereotu ile", "en": "With broad beans, carrot and dill"}, "price": 280, "tags": ["vegan", "glutensiz"], "image": "photo-1604909052743-94e838986d24"}
+      ]
+    },
+    {
+      "id": "salata",
+      "pair": "sarap",
+      "section": "mutfak",
+      "image": "photo-1540189549336-e6e99c3679fe",
+      "name": {"tr": "Salatalar", "en": "Salads"},
+      "items": [
+        {"name": {"tr": "Roka – Parmesan", "en": "Rocket & Parmesan"}, "desc": {"tr": "Roka, parmesan, kiraz domates ve balzamik", "en": "Rocket, parmesan, cherry tomatoes and balsamic"}, "price": 340, "tags": ["vejetaryen", "glutensiz"], "image": "photo-1608032077018-c9aad9565d29"},
+        {"name": {"tr": "Ege Otlu Salata", "en": "Aegean Herb Salad"}, "desc": {"tr": "Mevsim otları, nar ekşisi ve Ayvalık zeytinyağı", "en": "Seasonal herbs, pomegranate molasses and Ayvalık olive oil"}, "price": 320, "tags": ["vegan", "glutensiz"], "image": "photo-1529059997568-3d847b1154f0"},
+        {"name": {"tr": "Burrata Salata", "en": "Burrata Salad"}, "desc": {"tr": "Taze burrata, köy domatesi, fesleğen ve pesto", "en": "Fresh burrata, heirloom tomatoes, basil and pesto"}, "price": 520, "tags": ["sef", "vejetaryen", "glutensiz"], "image": "photo-1505253716362-afaea1d3d1af"},
+        {"name": {"tr": "Çoban Salata", "en": "Shepherd's Salad"}, "desc": {"tr": "Domates, salatalık, biber, soğan ve maydanoz", "en": "Tomato, cucumber, pepper, onion and parsley"}, "price": 220, "tags": ["vegan", "glutensiz"], "image": "photo-1625944230945-1b7dd3b949ab"}
+      ]
+    },
+    {
+      "id": "pizza",
+      "pair": "bira",
+      "section": "mutfak",
+      "image": "photo-1574071318508-1cdbab80d002",
+      "name": {"tr": "Pizzalar", "en": "Pizzas"},
+      "note": {"tr": "Taş fırında, her gün taze yoğrulan hamurla", "en": "Stone-oven baked, dough made fresh every day"},
+      "items": [
+        {"name": "Margherita", "desc": {"tr": "Domates sos, mozzarella ve taze fesleğen", "en": "Tomato sauce, mozzarella and fresh basil"}, "price": 560, "tags": ["vejetaryen"], "image": "photo-1574071318508-1cdbab80d002"},
+        {"name": {"tr": "Mantarlı", "en": "Mushroom"}, "desc": {"tr": "Kültür ve kestane mantarı, mozzarella, kekik", "en": "Button and chestnut mushrooms, mozzarella, thyme"}, "price": 620, "tags": ["vejetaryen"], "image": "photo-1590947132387-155cc02f3212"},
+        {"name": "Cunda", "desc": {"tr": "Ezine peyniri, Ayvalık zeytini, domates ve kekik", "en": "Ezine cheese, Ayvalık olives, tomato and thyme"}, "price": 680, "tags": ["favori", "sef", "vejetaryen"], "image": "photo-1594007654729-407eedc4be65"},
+        {"name": "Pepperoni", "desc": {"tr": "Domates sos, mozzarella ve pepperoni", "en": "Tomato sauce, mozzarella and pepperoni"}, "price": 680, "tags": ["acili"], "image": "photo-1628840042765-356cda07504e"},
+        {"name": {"tr": "Dört Peynir", "en": "Four Cheese"}, "desc": {"tr": "Mozzarella, gorgonzola, parmesan ve Ezine peyniri", "en": "Mozzarella, gorgonzola, parmesan and Ezine cheese"}, "price": 720, "tags": ["vejetaryen"], "image": "photo-1620374645498-af6bd681a0bd"},
+        {"name": {"tr": "Ege Otları", "en": "Aegean Herbs"}, "desc": {"tr": "Mevsim otları, lor, mozzarella ve limon kabuğu", "en": "Seasonal greens, curd cheese, mozzarella and lemon zest"}, "price": 660, "tags": ["vejetaryen"], "image": "photo-1593560708920-61dd98c46a4e"},
+        {"name": {"tr": "Trüflü", "en": "Truffle"}, "desc": {"tr": "Trüf kreması, mantar, mozzarella ve roka", "en": "Truffle cream, mushrooms, mozzarella and rocket"}, "price": 840, "tags": ["sef", "vejetaryen"], "image": "photo-1513104890138-7c749659a591"}
+      ]
+    },
+    {
+      "id": "makarna",
+      "pair": "sarap",
+      "section": "mutfak",
+      "image": "photo-1621996346565-e3dbc646d9a9",
+      "name": {"tr": "Makarnalar", "en": "Pasta"},
+      "note": {"tr": "Tüm makarnalarımız ev yapımıdır", "en": "All our pasta is homemade"},
+      "items": [
+        {"name": {"tr": "Ispanaklı Ravyoli", "en": "Spinach Ravioli"}, "desc": {"tr": "Ispanak ve lor dolgulu, adaçaylı tereyağı", "en": "Filled with spinach and curd cheese, sage butter"}, "price": 560, "tags": ["vejetaryen"], "image": "photo-1587740908075-9e245070dfaa"},
+        {"name": {"tr": "Kalamarlı Linguine", "en": "Calamari Linguine"}, "desc": {"tr": "Kalamar, sarımsak, cherry domates ve beyaz şarap", "en": "Calamari, garlic, cherry tomatoes and white wine"}, "price": 640, "tags": ["sef"], "image": "photo-1551183053-bf91a1d81141"},
+        {"name": {"tr": "Karidesli Spaghetti", "en": "Shrimp Spaghetti"}, "desc": {"tr": "Karides, acı biber, limon ve maydanoz", "en": "Shrimp, chili, lemon and parsley"}, "price": 680, "tags": ["favori", "acili"], "image": "photo-1563379926898-05f4575a45d8"},
+        {"name": "Penne Arrabbiata", "desc": {"tr": "Acılı domates sos, sarımsak ve fesleğen", "en": "Spicy tomato sauce, garlic and basil"}, "price": 460, "tags": ["vegan", "acili"], "image": "photo-1621996346565-e3dbc646d9a9"},
+        {"name": {"tr": "Kremalı Mantarlı Fettuccine", "en": "Creamy Mushroom Fettuccine"}, "desc": {"tr": "Krema, karışık mantar ve parmesan", "en": "Cream, mixed mushrooms and parmesan"}, "price": 540, "tags": ["vejetaryen"], "image": "photo-1645112411341-6c4fd023714a"}
+      ]
+    },
+    {
+      "id": "ana",
+      "pair": "sarap",
+      "section": "mutfak",
+      "image": "photo-1529692236671-f1f6cf9683ba",
+      "name": {"tr": "Ana Yemekler & Izgaralar", "en": "Mains & Grills"},
+      "items": [
+        {"name": {"tr": "Izgara Tavuk", "en": "Grilled Chicken"}, "desc": {"tr": "Kekikli marine, köz sebze ve pilav", "en": "Thyme-marinated, roasted vegetables and rice"}, "price": 560, "tags": ["glutensiz"], "image": "photo-1598515214211-89d3c73ae83b"},
+        {"name": {"tr": "Izgara Köfte", "en": "Grilled Köfte"}, "desc": {"tr": "Dana kıyma, köz biber, domates ve piyaz", "en": "Beef köfte, roasted pepper, tomato and bean salad"}, "price": 620, "image": "photo-1529042410759-befb1204b468"},
+        {"name": {"tr": "Dana Bonfile", "en": "Beef Tenderloin"}, "desc": {"tr": "Tereyağlı patates püresi ve demi-glace sos", "en": "Buttery mash and demi-glace"}, "price": 1150, "tags": ["sef", "glutensiz"], "image": "photo-1432139509613-5c4255815697"},
+        {"name": {"tr": "Kuzu Pirzola", "en": "Lamb Chops"}, "desc": {"tr": "Biberiyeli, köz sebze ile", "en": "With rosemary and roasted vegetables"}, "price": 1250, "tags": ["favori", "glutensiz"], "image": "photo-1529692236671-f1f6cf9683ba"},
+        {"name": {"tr": "Günün Balığı", "en": "Catch of the Day"}, "desc": {"tr": "Sabah tezgâhından; ızgara veya buğulama", "en": "From this morning's market; grilled or steamed"}, "priceText": {"tr": "Sorunuz", "en": "Ask us"}, "tags": ["glutensiz"], "image": "photo-1603073163308-9654c3fb70b5"}
+      ]
+    },
+    {
+      "id": "deniz",
+      "pair": "raki",
+      "section": "mutfak",
+      "image": "photo-1606850780554-b55ea4dd0b70",
+      "name": {"tr": "Deniz Ürünleri", "en": "Seafood"},
+      "items": [
+        {"name": {"tr": "Papalina", "en": "Fried Sprats"}, "desc": {"tr": "Çıtır kızartılmış, roka ve limon", "en": "Crispy fried, with rocket and lemon"}, "price": 420, "image": "photo-1615141982883-c7ad0e69fd62"},
+        {"name": {"tr": "Ahtapot Izgara", "en": "Grilled Octopus"}, "desc": {"tr": "Fava yatağında, kapari ve zeytinyağı", "en": "On fava purée, with capers and olive oil"}, "price": 820, "tags": ["sef", "glutensiz"], "image": "photo-1606850780554-b55ea4dd0b70"},
+        {"name": {"tr": "Levrek", "en": "Sea Bass"}, "desc": {"tr": "Izgara, roka ve kırmızı soğan", "en": "Grilled, with rocket and red onion"}, "price": 780, "tags": ["glutensiz"], "image": "photo-1510130387422-82bed34b37e9"},
+        {"name": {"tr": "Çupra", "en": "Sea Bream"}, "desc": {"tr": "Izgara, mevsim salatası", "en": "Grilled, with seasonal salad"}, "price": 780, "tags": ["glutensiz"], "image": "photo-1611171711912-e3f6b536f532"},
+        {"name": {"tr": "Midye Tava", "en": "Fried Mussels"}, "desc": {"tr": "Bira hamurunda, tarator sos", "en": "Beer-battered, with tarator sauce"}, "price": 440, "tags": ["favori"], "image": "photo-1625943555419-56a2cb596640"}
+      ]
+    },
+    {
+      "id": "tatli",
+      "pair": "sicak",
+      "section": "mutfak",
+      "image": "photo-1571877227200-a0d98ea607e9",
+      "name": {"tr": "Tatlılar", "en": "Desserts"},
+      "items": [
+        {"name": {"tr": "Lor Tatlısı", "en": "Curd Cheese Dessert"}, "desc": {"tr": "Ayvalık usulü, şerbetli", "en": "Ayvalık-style, in light syrup"}, "price": 260, "tags": ["favori", "vejetaryen"], "image": "photo-1598110750624-207050c4f28c"},
+        {"name": "Tiramisu", "desc": {"tr": "Mascarpone, espresso ve kakao", "en": "Mascarpone, espresso and cocoa"}, "price": 320, "tags": ["vejetaryen"], "image": "photo-1534766555764-ce878a5e3a2b"},
+        {"name": {"tr": "Girit Dondurması", "en": "Cretan Ice Cream"}, "desc": {"tr": "Sakızlı, Antep fıstığı ile", "en": "Mastic-flavoured, with pistachio"}, "price": 280, "tags": ["vejetaryen", "glutensiz"], "image": "photo-1497034825429-c343d7c6a68f"},
+        {"name": {"tr": "İrmik Helvası", "en": "Semolina Halva"}, "desc": {"tr": "Sıcak servis, dondurma ile", "en": "Served warm with ice cream"}, "price": 260, "tags": ["vejetaryen"], "image": "photo-1563805042-7684c019e1cb"},
+        {"name": {"tr": "Mevsim Meyve Tabağı", "en": "Seasonal Fruit Platter"}, "desc": {"tr": "Paylaşmalık", "en": "To share"}, "price": 380, "tags": ["vegan", "glutensiz"], "image": "photo-1519996529931-28324d5a630e"},
+        {"name": "Panna Cotta", "desc": {"tr": "Mevsim meyveli sos ile", "en": "With seasonal fruit coulis"}, "price": 290, "tags": ["vejetaryen", "glutensiz"], "image": "photo-1488477181946-6428a0291777"}
+      ]
+    },
+    {
+      "id": "raki",
+      "pair": "meze",
+      "section": "bar",
+      "image": "photo-1414235077428-338989a2e8c0",
+      "name": {"tr": "Rakılar", "en": "Rakı"},
+      "note": {"tr": "Mezelerimizle birlikte, buz ve su servisiyle", "en": "Served with ice and water — best with our mezes"},
+      "items": [
+        {"name": "Yeni Rakı", "desc": {"tr": "Klasik, dengeli anason", "en": "Classic, balanced anise"}, "prices": [{"label": {"tr": "Tek", "en": "Single"}, "price": 260}, {"label": "Duble", "price": 420}, {"label": "35cl", "price": 1650}, {"label": "70cl", "price": 2950}], "image": "photo-1414235077428-338989a2e8c0"},
+        {"name": "Tekirdağ Altın Seri", "desc": {"tr": "Meşe fıçıda dinlendirilmiş, yumuşak", "en": "Oak-rested, smooth"}, "prices": [{"label": {"tr": "Tek", "en": "Single"}, "price": 300}, {"label": "Duble", "price": 480}, {"label": "35cl", "price": 1900}, {"label": "70cl", "price": 3400}], "tags": ["favori"], "image": "photo-1530062845289-9109b2c9c868"},
+        {"name": "Efe Yaş Üzüm", "desc": {"tr": "Yaş üzümden, aromatik", "en": "From fresh grapes, aromatic"}, "prices": [{"label": {"tr": "Tek", "en": "Single"}, "price": 280}, {"label": "Duble", "price": 450}, {"label": "35cl", "price": 1750}, {"label": "70cl", "price": 3150}], "image": "photo-1476224203421-9ac39bcb3327"},
+        {"name": "Beylerbeyi Göbek", "desc": {"tr": "Damıtmanın göbeğinden, ipeksi içim", "en": "Heart of the distillation, silky"}, "prices": [{"label": {"tr": "Tek", "en": "Single"}, "price": 320}, {"label": "Duble", "price": 520}, {"label": "35cl", "price": 2100}, {"label": "70cl", "price": 3800}], "tags": ["sef"], "image": "photo-1600891964599-f61ba0e24092"}
+      ]
+    },
+    {
+      "id": "sarap",
+      "pair": "meze",
+      "section": "bar",
+      "image": "photo-1474722883778-792e7990302f",
+      "name": {"tr": "Şaraplar", "en": "Wines"},
+      "note": {"tr": "Ege bağlarından seçkiler — Urla, Bozcaada, Şirince", "en": "A selection from Aegean vineyards — Urla, Bozcaada, Şirince"},
+      "items": [
+        {"group": {"tr": "Beyaz", "en": "White"}, "name": "Urla Vourla Beyaz", "meta": "Sauvignon Blanc · Urla", "desc": {"tr": "Narenciye, yeşil elma ve canlı mineral bitiş", "en": "Citrus, green apple and a lively mineral finish"}, "prices": [{"label": {"tr": "Kadeh", "en": "Glass"}, "price": 450}, {"label": {"tr": "Şişe", "en": "Bottle"}, "price": 2200}], "tags": ["favori"], "image": "photo-1506377247377-2a5b3b417ebb"},
+        {"group": {"tr": "Beyaz", "en": "White"}, "name": "Corvus Bozcaada Çavuş", "meta": "Çavuş · Bozcaada", "desc": {"tr": "Beyaz çiçek, şeftali ve hafif tuzlu deniz esintisi", "en": "White flowers, peach and a hint of sea salt"}, "prices": [{"label": {"tr": "Kadeh", "en": "Glass"}, "price": 480}, {"label": {"tr": "Şişe", "en": "Bottle"}, "price": 2400}], "image": "photo-1414235077428-338989a2e8c0"},
+        {"group": {"tr": "Beyaz", "en": "White"}, "name": "Şirince Narince", "meta": "Narince · Şirince", "desc": {"tr": "Ayva, kayısı ve yuvarlak doku", "en": "Quince, apricot and a round texture"}, "prices": [{"label": {"tr": "Kadeh", "en": "Glass"}, "price": 400}, {"label": {"tr": "Şişe", "en": "Bottle"}, "price": 1900}], "image": "photo-1506377247377-2a5b3b417ebb"},
+        {"group": {"tr": "Kırmızı", "en": "Red"}, "name": "Urlice Boğazkere – Merlot", "meta": "Boğazkere, Merlot · Urla", "desc": {"tr": "Siyah kiraz, baharat ve kadifemsi tanen", "en": "Black cherry, spice and velvety tannins"}, "prices": [{"label": {"tr": "Kadeh", "en": "Glass"}, "price": 500}, {"label": {"tr": "Şişe", "en": "Bottle"}, "price": 2500}], "tags": ["sef"], "image": "photo-1553361371-9b22f78e8b1d"},
+        {"group": {"tr": "Kırmızı", "en": "Red"}, "name": "Bozcaada Karalahna", "meta": "Karalahna · Bozcaada", "desc": {"tr": "Böğürtlen, mürver ve toprak notaları", "en": "Blackberry, elderberry and earthy notes"}, "prices": [{"label": {"tr": "Kadeh", "en": "Glass"}, "price": 480}, {"label": {"tr": "Şişe", "en": "Bottle"}, "price": 2350}], "image": "photo-1474722883778-792e7990302f"},
+        {"group": {"tr": "Kırmızı", "en": "Red"}, "name": "Şirince Syrah", "meta": "Syrah · Şirince", "desc": {"tr": "Erik, karabiber ve uzun bitiş", "en": "Plum, black pepper and a long finish"}, "prices": [{"label": {"tr": "Kadeh", "en": "Glass"}, "price": 420}, {"label": {"tr": "Şişe", "en": "Bottle"}, "price": 2000}], "image": "photo-1584916201218-f4242ceb4809"},
+        {"group": {"tr": "Roze", "en": "Rosé"}, "name": "Urla Gün Batımı Roze", "meta": "Grenache, Syrah · Urla", "desc": {"tr": "Çilek, karpuz ve ferah asidite — terasın favorisi", "en": "Strawberry, watermelon and fresh acidity — a terrace favourite"}, "prices": [{"label": {"tr": "Kadeh", "en": "Glass"}, "price": 460}, {"label": {"tr": "Şişe", "en": "Bottle"}, "price": 2250}], "tags": ["favori"], "image": "photo-1558001373-7b93ee48ffa0"},
+        {"group": {"tr": "Roze", "en": "Rosé"}, "name": "Bozcaada Kuntra Roze", "meta": "Kuntra · Bozcaada", "desc": {"tr": "Ahududu, gül yaprağı ve tuzlu bitiş", "en": "Raspberry, rose petal and a saline finish"}, "prices": [{"label": {"tr": "Kadeh", "en": "Glass"}, "price": 440}, {"label": {"tr": "Şişe", "en": "Bottle"}, "price": 2150}], "image": "photo-1547595628-c61a29f496f0"},
+        {"group": {"tr": "Köpüklü", "en": "Sparkling"}, "name": "Urla Brut", "meta": "Chardonnay · Urla", "desc": {"tr": "Brioche, yeşil elma ve ince kabarcıklar", "en": "Brioche, green apple and fine bubbles"}, "prices": [{"label": {"tr": "Kadeh", "en": "Glass"}, "price": 520}, {"label": {"tr": "Şişe", "en": "Bottle"}, "price": 2800}], "image": "photo-1510812431401-41d2bd2722f3"},
+        {"group": {"tr": "Köpüklü", "en": "Sparkling"}, "name": "Prosecco DOC", "meta": "Glera · Veneto", "desc": {"tr": "Armut, beyaz çiçek ve hafif tatlımsı", "en": "Pear, white flowers, lightly off-dry"}, "prices": [{"label": {"tr": "Kadeh", "en": "Glass"}, "price": 480}, {"label": {"tr": "Şişe", "en": "Bottle"}, "price": 2400}], "image": "photo-1414235077428-338989a2e8c0"}
+      ]
+    },
+    {
+      "id": "kokteyl",
+      "pair": "baslangic",
+      "section": "bar",
+      "image": "photo-1544145945-f90425340c7e",
+      "name": {"tr": "Kokteyller", "en": "Cocktails"},
+      "items": [
+        {"group": {"tr": "İmza Kokteyller", "en": "Signature Cocktails"}, "name": "Cunda Gün Batımı", "desc": {"tr": "Votka, kan portakalı, nar şurubu, limon, köpüklü şarap", "en": "Vodka, blood orange, pomegranate syrup, lemon, sparkling wine"}, "price": 520, "tags": ["favori", "sef"], "image": "photo-1595981267035-7b04ca84a82d"},
+        {"group": {"tr": "İmza Kokteyller", "en": "Signature Cocktails"}, "name": "Ayvalık Zeytin Martini", "desc": {"tr": "Cin, kuru vermut, Ayvalık zeytin salamurası, yeşil zeytin", "en": "Gin, dry vermouth, Ayvalık olive brine, green olive"}, "price": 540, "image": "photo-1544145945-f90425340c7e"},
+        {"group": {"tr": "İmza Kokteyller", "en": "Signature Cocktails"}, "name": "Sakızlı Mojito", "desc": {"tr": "Beyaz rom, sakız likörü, lime, taze nane, soda", "en": "White rum, mastic liqueur, lime, fresh mint, soda"}, "price": 500, "image": "photo-1599021456807-25db0f974333"},
+        {"group": {"tr": "İmza Kokteyller", "en": "Signature Cocktails"}, "name": "Moschonisi Spritz", "desc": {"tr": "Rakı, bergamot, limon kabuğu, tonik, prosecco", "en": "Rakı, bergamot, lemon peel, tonic, prosecco"}, "price": 520, "image": "photo-1609951651556-5334e2706168"},
+        {"group": {"tr": "Klasikler", "en": "Classics"}, "name": "Aperol Spritz", "desc": {"tr": "Aperol, prosecco, soda, portakal", "en": "Aperol, prosecco, soda, orange"}, "price": 460, "image": "photo-1560512823-829485b8bf24"},
+        {"group": {"tr": "Klasikler", "en": "Classics"}, "name": "Negroni", "desc": {"tr": "Cin, Campari, tatlı vermut", "en": "Gin, Campari, sweet vermouth"}, "price": 480, "image": "photo-1514362545857-3bc16c4c7d1b"},
+        {"group": {"tr": "Klasikler", "en": "Classics"}, "name": "Mojito", "desc": {"tr": "Beyaz rom, lime, nane, şeker, soda", "en": "White rum, lime, mint, sugar, soda"}, "price": 440, "image": "photo-1546171753-97d7676e4602"},
+        {"group": {"tr": "Klasikler", "en": "Classics"}, "name": "Margarita", "desc": {"tr": "Tekila, triple sec, lime, tuz", "en": "Tequila, triple sec, lime, salt rim"}, "price": 460, "image": "photo-1556855810-ac404aa91e85"},
+        {"group": {"tr": "Klasikler", "en": "Classics"}, "name": "Gin Tonic", "desc": {"tr": "Cin, premium tonik, salatalık veya biberiye", "en": "Gin, premium tonic, cucumber or rosemary"}, "price": 440, "image": "photo-1514362545857-3bc16c4c7d1b"}
+      ]
+    },
+    {
+      "id": "mocktail",
+      "pair": "tatli",
+      "section": "bar",
+      "image": "photo-1497534446932-c925b458314e",
+      "name": {"tr": "Alkolsüz Kokteyller", "en": "Mocktails"},
+      "items": [
+        {"name": {"tr": "Bakır Gün Batımı", "en": "Copper Sunset"}, "desc": {"tr": "Portakal, nar, zencefil, soda", "en": "Orange, pomegranate, ginger, soda"}, "price": 280, "tags": ["vegan"], "image": "photo-1497534446932-c925b458314e"},
+        {"name": "Virgin Mojito", "desc": {"tr": "Lime, nane, şeker, soda", "en": "Lime, mint, sugar, soda"}, "price": 260, "tags": ["vegan"], "image": "photo-1551538827-9c037cb4f32a"},
+        {"name": {"tr": "Lavanta Limonata", "en": "Lavender Lemonade"}, "desc": {"tr": "Ev limonatası, lavanta şurubu, tonik", "en": "Homemade lemonade, lavender syrup, tonic"}, "price": 280, "tags": ["vegan", "favori"], "image": "photo-1613478223719-2ab802602423"},
+        {"name": {"tr": "Ege Bahçesi", "en": "Aegean Garden"}, "desc": {"tr": "Salatalık, fesleğen, elma suyu, lime", "en": "Cucumber, basil, apple juice, lime"}, "price": 270, "tags": ["vegan"], "image": "photo-1527661591475-527312dd65f5"}
+      ]
+    },
+    {
+      "id": "bira",
+      "pair": "pizza",
+      "section": "bar",
+      "image": "photo-1608270586620-248524c67de9",
+      "name": {"tr": "Biralar", "en": "Beers"},
+      "items": [
+        {"name": {"tr": "Fıçı Bira", "en": "Draught Beer"}, "desc": {"tr": "Yerli pilsner", "en": "Local pilsner"}, "prices": [{"label": "33cl", "price": 220}, {"label": "50cl", "price": 290}], "tags": ["favori"], "image": "photo-1566633806327-68e152aaf26d"},
+        {"name": "Efes Pilsen", "desc": {"tr": "Şişe, 50cl", "en": "Bottle, 50cl"}, "price": 260, "image": "photo-1608270586620-248524c67de9"},
+        {"name": "Tuborg Gold", "desc": {"tr": "Şişe, 50cl", "en": "Bottle, 50cl"}, "price": 260, "image": "photo-1571613316887-6f8d5cbf7ef7"},
+        {"name": "Corona Extra", "desc": {"tr": "İthal, şişe 35,5cl, limon ile", "en": "Imported, 35.5cl bottle, with lime"}, "price": 340, "image": "photo-1600213903598-25be92abde40"},
+        {"name": "Heineken", "desc": {"tr": "İthal, şişe 33cl", "en": "Imported, 33cl bottle"}, "price": 320, "image": "photo-1618885472179-5e474019f2a9"},
+        {"name": {"tr": "Craft Seçkisi", "en": "Craft Selection"}, "desc": {"tr": "IPA, wheat ve amber — yerel mikro bira evlerinden, dönemsel", "en": "IPA, wheat and amber from local microbreweries, rotating"}, "price": 380, "tags": ["sef"], "image": "photo-1584225064785-c62a8b43d148"}
+      ]
+    },
+    {
+      "id": "sert",
+      "pair": "tatli",
+      "section": "bar",
+      "image": "photo-1569529465841-dfecdab7503b",
+      "name": {"tr": "Sert İçkiler", "en": "Spirits"},
+      "items": [
+        {"group": {"tr": "Viski", "en": "Whisky"}, "name": "Jameson", "desc": {"tr": "İrlanda", "en": "Ireland"}, "prices": [{"label": {"tr": "Tek", "en": "Single"}, "price": 340}, {"label": "Duble", "price": 560}], "image": "photo-1470337458703-46ad1756a187"},
+        {"group": {"tr": "Viski", "en": "Whisky"}, "name": "Chivas Regal 12", "desc": {"tr": "İskoç blend", "en": "Scotch blend"}, "prices": [{"label": {"tr": "Tek", "en": "Single"}, "price": 420}, {"label": "Duble", "price": 700}], "image": "photo-1569529465841-dfecdab7503b"},
+        {"group": {"tr": "Viski", "en": "Whisky"}, "name": "Glenfiddich 12", "desc": {"tr": "Single malt", "en": "Single malt"}, "prices": [{"label": {"tr": "Tek", "en": "Single"}, "price": 520}, {"label": "Duble", "price": 880}], "image": "photo-1470337458703-46ad1756a187"},
+        {"group": {"tr": "Cin", "en": "Gin"}, "name": "Bombay Sapphire", "desc": {"tr": "London dry", "en": "London dry"}, "prices": [{"label": {"tr": "Tek", "en": "Single"}, "price": 360}, {"label": "Duble", "price": 600}], "image": "photo-1527661591475-527312dd65f5"},
+        {"group": {"tr": "Cin", "en": "Gin"}, "name": "Hendrick's", "desc": {"tr": "Salatalık ve gül", "en": "Cucumber and rose"}, "prices": [{"label": {"tr": "Tek", "en": "Single"}, "price": 440}, {"label": "Duble", "price": 740}], "image": "photo-1608885898957-a559228e8749"},
+        {"group": {"tr": "Votka", "en": "Vodka"}, "name": "Absolut", "desc": {"tr": "İsveç", "en": "Sweden"}, "prices": [{"label": {"tr": "Tek", "en": "Single"}, "price": 320}, {"label": "Duble", "price": 540}], "image": "photo-1597290282695-edc43d0e7129"},
+        {"group": {"tr": "Votka", "en": "Vodka"}, "name": "Grey Goose", "desc": {"tr": "Fransa", "en": "France"}, "prices": [{"label": {"tr": "Tek", "en": "Single"}, "price": 460}, {"label": "Duble", "price": 780}], "image": "photo-1597290282695-edc43d0e7129"},
+        {"group": {"tr": "Tekila", "en": "Tequila"}, "name": "Jose Cuervo Silver", "desc": {"tr": "Lime ve tuz ile", "en": "With lime and salt"}, "prices": [{"label": {"tr": "Tek", "en": "Single"}, "price": 340}, {"label": "Duble", "price": 560}], "image": "photo-1556679343-c7306c1976bc"},
+        {"group": {"tr": "Likörler", "en": "Liqueurs"}, "name": {"tr": "Likör Seçkisi", "en": "Liqueur Selection"}, "desc": {"tr": "Baileys, Kahlúa, Limoncello, Sakız likörü, Jägermeister", "en": "Baileys, Kahlúa, Limoncello, Mastic liqueur, Jägermeister"}, "prices": [{"label": {"tr": "Tek", "en": "Single"}, "price": 300}, {"label": "Duble", "price": 500}], "image": "photo-1536935338788-846bb9981813"}
+      ]
+    },
+    {
+      "id": "sicak",
+      "pair": "tatli",
+      "section": "bar",
+      "image": "photo-1509042239860-f550ce710b93",
+      "name": {"tr": "Sıcak İçecekler", "en": "Hot Drinks"},
+      "items": [
+        {"name": {"tr": "Türk Kahvesi", "en": "Turkish Coffee"}, "desc": {"tr": "Lokum ile", "en": "Served with Turkish delight"}, "price": 140, "image": "photo-1514432324607-a09d9b4aefdd"},
+        {"name": {"tr": "Dibek Kahvesi", "en": "Dibek Coffee"}, "desc": {"tr": "Taş dibekte dövülmüş, yumuşak içim", "en": "Stone-ground, smooth"}, "price": 160, "image": "photo-1509042239860-f550ce710b93"},
+        {"name": {"tr": "Espresso Çeşitleri", "en": "Espresso Drinks"}, "desc": {"tr": "Espresso, americano, cappuccino, latte, flat white", "en": "Espresso, americano, cappuccino, latte, flat white"}, "prices": [{"label": "Espresso", "price": 130}, {"label": "Americano", "price": 150}, {"label": "Cappuccino / Latte", "price": 180}], "image": "photo-1610889556528-9a770e32642f"},
+        {"name": {"tr": "Çay", "en": "Tea"}, "desc": {"tr": "İnce belli bardakta demlik çay", "en": "Brewed black tea in a tulip glass"}, "price": 50, "image": "photo-1571934811356-5cc061b6821f"},
+        {"name": {"tr": "Bitki Çayları", "en": "Herbal Teas"}, "desc": {"tr": "Ada çayı, ıhlamur, kuşburnu, papatya", "en": "Sage, linden, rosehip, chamomile"}, "price": 120, "tags": ["vegan"], "image": "photo-1576092768241-dec231879fc3"}
+      ]
+    },
+    {
+      "id": "soguk",
+      "pair": "kahvalti",
+      "section": "bar",
+      "image": "photo-1621263764928-df1444c5e859",
+      "name": {"tr": "Soğuk İçecekler", "en": "Soft Drinks"},
+      "items": [
+        {"name": {"tr": "Ev Limonatası", "en": "Homemade Lemonade"}, "desc": {"tr": "Taze nane ile", "en": "With fresh mint"}, "price": 180, "tags": ["favori", "vegan"], "image": "photo-1621263764928-df1444c5e859"},
+        {"name": {"tr": "Taze Sıkma Portakal", "en": "Fresh Orange Juice"}, "desc": {"tr": "Günlük sıkılır", "en": "Freshly squeezed"}, "price": 200, "tags": ["vegan"], "image": "photo-1600271886742-f049cd451bba"},
+        {"name": {"tr": "Ayran", "en": "Ayran"}, "desc": {"tr": "Ev yapımı, köpüklü", "en": "Homemade yoghurt drink"}, "price": 90, "image": "photo-1571212515416-fef01fc43637"},
+        {"name": {"tr": "Maden Suyu", "en": "Sparkling Water"}, "desc": {"tr": "Sade veya meyveli", "en": "Plain or flavoured"}, "price": 70, "image": "photo-1559839914-17aae19cec71"},
+        {"name": {"tr": "Meşrubatlar", "en": "Soft Drinks"}, "desc": {"tr": "Kola, gazoz, soğuk çay", "en": "Cola, soda pop, iced tea"}, "price": 110, "image": "photo-1554866585-cd94860890b7"},
+        {"name": {"tr": "Buzlu Kahve", "en": "Iced Coffee"}, "desc": {"tr": "Iced americano veya iced latte", "en": "Iced americano or iced latte"}, "price": 190, "image": "photo-1517701550927-30cf4ba1dba5"}
+      ]
+    }
+  ],
+  "setMenu": {
+    "title": {"tr": "Fiks Gün Batımı Menüsü", "en": "Sunset Set Menu"},
+    "desc": {"tr": "Terasta, gün batarken; Cunda'nın en sevilen sofrası tek fiyatla.", "en": "On the terrace as the sun sets — Cunda's favourite table at one price."},
+    "items": [
+      {"tr": "5 çeşit soğuk meze", "en": "5 cold mezes"},
+      {"tr": "Sıcak peynirli börek", "en": "Warm cheese börek"},
+      {"tr": "Ara sıcak (kalamar veya karides güveç)", "en": "Hot starter (calamari or shrimp casserole)"},
+      {"tr": "Izgara tavuk veya köfte", "en": "Grilled chicken or köfte"},
+      {"tr": "Lor tatlısı veya Girit dondurması", "en": "Curd dessert or Cretan ice cream"},
+      {"tr": "35cl rakı veya bir şişe Ege şarabı (2 kişiye)", "en": "35cl rakı or a bottle of Aegean wine (per 2 guests)"}
+    ],
+    "price": 2950,
+    "per": {"tr": "kişi başı", "en": "per person"}
+  }
+}
