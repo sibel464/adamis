@@ -1,0 +1,217 @@
+{
+  "_info": "Kardias Cunda site içeriği. En kolay yol: yönetim paneli (admin.html). Elle düzenlerken JSON biçimini bozmamaya dikkat edin.",
+  "contact": {
+    "phone": "+902663271965",
+    "phoneDisplay": "0266 327 19 65",
+    "whatsapp": "902663271965",
+    "instagram": "https://www.instagram.com/kardiascunda/",
+    "address": "Mithatpaşa Mah., 20082 Sokak No:4, Cunda, 10405 Ayvalık / Balıkesir",
+    "mapsQuery": "Kardias Cunda, Mithatpaşa, Ayvalık"
+  },
+  "hours": {
+    "open": "14:00",
+    "close": "00:00"
+  },
+  "images": {
+    "hero": "img/cunda/liman-1920.jpg",
+    "story": "img/cunda/tas-ev.jpg",
+    "storyInset": "img/cunda/gullu-sokak.jpg",
+    "stay": "photo-1611892440504-42a792e24d32",
+    "staySmall": "img/cunda/tas-konak.jpg"
+  },
+  "rating": {
+    "score": "4.7",
+    "count": {
+      "tr": "Google'da 1.200+ yorum",
+      "en": "1,200+ reviews on Google"
+    },
+    "showSampleNote": true
+  },
+  "texts": {},
+  "gallery": [
+    {
+      "src": "img/cunda/aksamustu-tekne.jpg",
+      "w": 3,
+      "h": 4,
+      "tr": "Cunda'da akşamüstü",
+      "en": "Late afternoon in Cunda"
+    },
+    {
+      "src": "photo-1574071318508-1cdbab80d002",
+      "w": 1,
+      "h": 1,
+      "tr": "Taş fırından Margherita",
+      "en": "Margherita from the stone oven"
+    },
+    {
+      "src": "img/cunda/yel-degirmeni.jpg",
+      "w": 3,
+      "h": 2,
+      "tr": "Tepedeki yel değirmeni",
+      "en": "The windmill on the hill"
+    },
+    {
+      "src": "photo-1530062845289-9109b2c9c868",
+      "w": 4,
+      "h": 3,
+      "tr": "Meze sofrası",
+      "en": "Meze table"
+    },
+    {
+      "src": "img/cunda/gullu-sokak.jpg",
+      "w": 4,
+      "h": 3,
+      "tr": "Güllü sokaklar",
+      "en": "Lanes full of roses"
+    },
+    {
+      "src": "photo-1560512823-829485b8bf24",
+      "w": 4,
+      "h": 5,
+      "tr": "Gün batımı kokteyli",
+      "en": "Sunset cocktail"
+    },
+    {
+      "src": "img/cunda/tas-ev.jpg",
+      "w": 4,
+      "h": 3,
+      "tr": "Rum mahallesinin taş evleri",
+      "en": "Stone houses of the Greek quarter"
+    },
+    {
+      "src": "photo-1621996346565-e3dbc646d9a9",
+      "w": 4,
+      "h": 3,
+      "tr": "Ev yapımı makarna",
+      "en": "Homemade pasta"
+    },
+    {
+      "src": "img/cunda/kediler.jpg",
+      "w": 3,
+      "h": 2,
+      "tr": "Adanın kedileri",
+      "en": "The island's cats"
+    },
+    {
+      "src": "photo-1559339352-11d035aa65de",
+      "w": 4,
+      "h": 3,
+      "tr": "Denize bakan masalar",
+      "en": "Tables by the sea"
+    },
+    {
+      "src": "img/cunda/rum-kilisesi.jpg",
+      "w": 4,
+      "h": 3,
+      "tr": "Eski Rum kilisesi",
+      "en": "The old Greek church"
+    },
+    {
+      "src": "photo-1611892440504-42a792e24d32",
+      "w": 4,
+      "h": 3,
+      "tr": "Otel odası",
+      "en": "Hotel room"
+    }
+  ],
+  "events": [
+    {
+      "image": "photo-1514933651103-005eec06c04b",
+      "when": {
+        "tr": "Cuma & Cumartesi · 21:00",
+        "en": "Friday & Saturday · 21:00"
+      },
+      "title": {
+        "tr": "Canlı Müzik Geceleri",
+        "en": "Live Music Nights"
+      },
+      "desc": {
+        "tr": "Akustik, caz ve Ege ezgileri; yıldızların altında, rakı kadehleri eşliğinde.",
+        "en": "Acoustic, jazz and Aegean tunes under the stars, with a glass of rakı."
+      }
+    },
+    {
+      "image": "photo-1510812431401-41d2bd2722f3",
+      "when": {
+        "tr": "Her ay · Çarşamba",
+        "en": "Monthly · Wednesday"
+      },
+      "title": {
+        "tr": "Şarap Tadımı Akşamları",
+        "en": "Wine Tasting Evenings"
+      },
+      "desc": {
+        "tr": "Urla, Bozcaada ve Şirince bağlarından şaraplar, şefin eşleştirme tabaklarıyla.",
+        "en": "Wines from Urla, Bozcaada and Şirince, paired with the chef's plates."
+      }
+    },
+    {
+      "image": "photo-1488477181946-6428a0291777",
+      "when": {
+        "tr": "Doğum günü · Evlilik teklifi · Nişan",
+        "en": "Birthdays · Proposals · Engagements"
+      },
+      "title": {
+        "tr": "Özel Gün Organizasyonları",
+        "en": "Special Occasions"
+      },
+      "desc": {
+        "tr": "Çiçekler, mumlar, pasta ve size özel bir köşe; gerisini biz düşünürüz.",
+        "en": "Flowers, candles, cake and a corner just for you — we take care of the rest."
+      }
+    },
+    {
+      "image": "photo-1528605248644-14dd04022da1",
+      "when": {
+        "tr": "10 – 60 kişi",
+        "en": "10 – 60 guests"
+      },
+      "title": {
+        "tr": "Grup Yemekleri",
+        "en": "Group Dinners"
+      },
+      "desc": {
+        "tr": "Şirket yemekleri, mezuniyetler ve kalabalık sofralar için özel menüler.",
+        "en": "Tailored menus for company dinners, graduations and big tables."
+      }
+    }
+  ],
+  "reviews": [
+    {
+      "name": "Elif K.",
+      "src": "Google",
+      "rating": 5,
+      "text": "Cunda'da gün batımını izlemek için daha güzel bir yer düşünemiyorum. Girit ezmesi ve Cunda pizzası harikaydı, servis çok ilgiliydi."
+    },
+    {
+      "name": "Mark T.",
+      "src": "Google",
+      "rating": 5,
+      "text": "The view over the harbour at sunset is unreal. Homemade pasta was excellent and the rakı-meze experience felt truly local."
+    },
+    {
+      "name": "Burak & Selin",
+      "src": "Google",
+      "rating": 5,
+      "text": "Evlilik teklifimizi burada yaptık; masayı mumlar ve çiçeklerle hazırlamışlardı. Hayatımızın en güzel akşamıydı."
+    },
+    {
+      "name": "Ayşe D.",
+      "src": "Google",
+      "rating": 4,
+      "text": "Taş evin atmosferi çok etkileyici. Mezeler taze, şarap listesi Ege bağlarından çok iyi seçilmiş. Hafta sonu mutlaka rezervasyon yapın."
+    },
+    {
+      "name": "Sophie L.",
+      "src": "Google",
+      "rating": 5,
+      "text": "We stayed at the hotel and had breakfast on the terrace every morning. Charming rooms, warm hosts, perfect location."
+    },
+    {
+      "name": "Murat Y.",
+      "src": "Google",
+      "rating": 5,
+      "text": "Pizzaların hamuru gerçekten farklı, tam kıvamında. Kalamarlı linguine ve lor tatlısı için tekrar geleceğiz."
+    }
+  ]
+}

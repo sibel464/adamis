@@ -76,8 +76,8 @@
         <a href="#iletisim" data-i18n="nav.contact">İletişim</a>
         <a href="#rezervasyon" class="btn btn--sunset btn--sm nav__cta" data-i18n="cta.book">Masa Ayırt</a>
         <div class="nav__extra">
-          <a href="tel:+902663271965" class="nav__extra-link"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>0266 327 19 65</a>
-          <span class="nav__extra-link"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span data-i18n="c.hoursv">Her gün 14:00 – 00:00</span></span>
+          <a href="tel:+902663271965" class="nav__extra-link"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg><span data-bind="phoneDisplay">0266 327 19 65</span></a>
+          <span class="nav__extra-link"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><span data-i18n="c.daily">Her gün</span> <span data-bind="hours">14:00 – 00:00</span></span></span>
           <p class="nav__extra-note">Kalispera · Cunda</p>
         </div>
       </nav>
@@ -94,7 +94,7 @@
   <main id="main">
     <!-- 2. HERO -->
     <section class="hero wave wave--cream" id="top">
-      <img class="hero__bg" src="img/cunda/liman-1920.jpg"
+      <img class="hero__bg" data-img="hero" src="img/cunda/liman-1920.jpg"
            srcset="img/cunda/liman-960.jpg 960w, img/cunda/liman-1920.jpg 1920w"
            sizes="100vw" width="1920" height="1285" alt="Cunda limanı: tepede yel değirmeni, ortada Taksiyarhis Kilisesi, önde tekneler" fetchpriority="high">
       <div class="hero__shade"></div>
@@ -133,7 +133,7 @@
             <span class="infobar__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
             <span class="infobar__text">
               <small data-i18n="info.hours">Her gün</small>
-              <strong>14:00 – 00:00</strong>
+              <strong data-bind="hours">14:00 – 00:00</strong>
               <span class="status" id="openStatus"></span>
             </span>
           </li>
@@ -142,7 +142,7 @@
             <span class="infobar__text">
               <small data-i18n="info.where">Konum</small>
               <strong data-i18n="info.wherev">Cunda tepesi, meydanın üstü</strong>
-              <a href="https://www.google.com/maps/dir/?api=1&destination=Kardias+Cunda+Mithatpa%C5%9Fa+Ayval%C4%B1k" target="_blank" rel="noopener" class="infobar__link" data-i18n="info.dir">Yol tarifi →</a>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Kardias+Cunda+Mithatpa%C5%9Fa+Ayval%C4%B1k" data-maps="dir" target="_blank" rel="noopener" class="infobar__link" data-i18n="info.dir">Yol tarifi →</a>
             </span>
           </li>
           <li class="infobar__item">
@@ -157,7 +157,7 @@
             <span class="infobar__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg></span>
             <span class="infobar__text">
               <small data-i18n="info.call">Telefon</small>
-              <strong>0266 327 19 65</strong>
+              <strong><span data-bind="phoneDisplay">0266 327 19 65</span></strong>
               <a href="tel:+902663271965" class="infobar__link" data-i18n="info.callcta">Hemen ara →</a>
             </span>
           </li>
@@ -193,9 +193,9 @@
         </div>
         <figure class="story__media reveal">
           <div class="arch">
-            <img src="img/cunda/tas-ev.jpg" loading="lazy" decoding="async" alt="Cunda'da mavi kepenkli eski bir taş Rum evi" width="1200" height="900">
+            <img data-img="story" src="img/cunda/tas-ev.jpg" loading="lazy" decoding="async" alt="Cunda'da mavi kepenkli eski bir taş Rum evi" width="1200" height="900">
           </div>
-          <img class="story__inset" data-parallax="0.08" src="img/cunda/gullu-sokak.jpg" loading="lazy" decoding="async" alt="Cunda'da güllerle bezeli bir sokak" width="1200" height="900">
+          <img class="story__inset" data-img="storyInset" data-parallax="0.08" src="img/cunda/gullu-sokak.jpg" loading="lazy" decoding="async" alt="Cunda'da güllerle bezeli bir sokak" width="1200" height="900">
           <figcaption class="story__badge"><strong>1890</strong><span data-i18n="story.badge">taş ev</span></figcaption>
         </figure>
       </div>
@@ -291,7 +291,7 @@
           <h2 class="h2" data-i18n="events.title">Terasta <em>özel</em> akşamlar</h2>
           <p class="section__lead" data-i18n="events.lead">Müzik, şarap ve kutlamalar için Cunda'nın en romantik sahnesi.</p>
         </header>
-        <div class="events">
+        <div class="events" id="eventsList">
           <article class="event reveal">
             <div class="event__media"><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=700&q=70&auto=format&fit=crop" loading="lazy" decoding="async" alt="" width="700" height="460"></div>
             <div class="event__body">
@@ -356,8 +356,8 @@
       <div class="container"><div class="divider" aria-hidden="true"><span></span><svg viewBox="0 0 220 120"><use href="#i-branch"/></svg><span></span></div></div>
       <div class="container stay">
         <div class="stay__media reveal">
-          <img class="stay__img stay__img--main" src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=900&q=70&auto=format&fit=crop" loading="lazy" decoding="async" alt="Butik otel odası" width="900" height="675">
-          <img class="stay__img stay__img--small" data-parallax="0.08" src="img/cunda/tas-konak.jpg" loading="lazy" decoding="async" alt="Cunda'da taş bir konak" width="700" height="466">
+          <img class="stay__img stay__img--main" data-img="stay" src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=900&q=70&auto=format&fit=crop" loading="lazy" decoding="async" alt="Butik otel odası" width="900" height="675">
+          <img class="stay__img stay__img--small" data-img="staySmall" data-parallax="0.08" src="img/cunda/tas-konak.jpg" loading="lazy" decoding="async" alt="Cunda'da taş bir konak" width="700" height="466">
         </div>
         <div class="stay__text reveal">
           <p class="eyebrow" data-i18n="stay.eyebrow">Konaklama</p>
@@ -384,9 +384,9 @@
             <h2 class="h2" data-i18n="rev.title">Ne <em>diyorlar?</em></h2>
           </div>
           <div class="rating">
-            <span class="rating__score">4.7</span>
-            <span class="stars" aria-label="5 üzerinden 4.7"><span style="--r:4.7"></span></span>
-            <span class="rating__count" data-i18n="rev.count">Google'da 1.200+ yorum</span>
+            <span class="rating__score" data-bind="ratingScore">4.7</span>
+            <span class="stars" id="ratingStars" aria-label="5 üzerinden 4.7"><span style="--r:4.7"></span></span>
+            <span class="rating__count" data-bind="ratingCount">Google'da 1.200+ yorum</span>
             <a class="rating__link" href="https://www.google.com/maps/search/?api=1&query=Kardias+Cunda+Ayval%C4%B1k" target="_blank" rel="noopener" data-i18n="rev.cta">Google'da değerlendir →</a>
             <span class="rating__sample" data-i18n="rev.sample">Örnek içerik: puan ve yorumlar, yayından önce gerçek Google yorumlarıyla değiştirilecek.</span>
           </div>
@@ -420,7 +420,7 @@
           <div class="reserve__contacts">
             <a href="tel:+902663271965" class="contact-pill">
               <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>
-              <span><small data-i18n="res.call">Bizi arayın</small>0266 327 19 65</span>
+              <span><small data-i18n="res.call">Bizi arayın</small><span data-bind="phoneDisplay">0266 327 19 65</span></span>
             </a>
             <a href="#" class="contact-pill contact-pill--wa js-wa">
               <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
@@ -482,12 +482,12 @@
           <p class="eyebrow" data-i18n="c.eyebrow">İletişim &amp; Konum</p>
           <h2 class="h2" data-i18n="c.title">Cunda'nın tepesinde, <em>meydanın hemen üstünde</em></h2>
           <dl class="contact__list">
-            <div><dt data-i18n="c.addr">Adres</dt><dd>Mithatpaşa Mah., 20082 Sokak No:4, Cunda, 10405 Ayvalık / Balıkesir</dd></div>
-            <div><dt data-i18n="c.phone">Telefon</dt><dd><a href="tel:+902663271965">0266 327 19 65</a></dd></div>
-            <div><dt data-i18n="c.hours">Çalışma saatleri</dt><dd data-i18n="c.hoursv">Her gün 14:00 – 00:00</dd></div>
+            <div><dt data-i18n="c.addr">Adres</dt><dd data-bind="address">Mithatpaşa Mah., 20082 Sokak No:4, Cunda, 10405 Ayvalık / Balıkesir</dd></div>
+            <div><dt data-i18n="c.phone">Telefon</dt><dd><a href="tel:+902663271965"><span data-bind="phoneDisplay">0266 327 19 65</span></a></dd></div>
+            <div><dt data-i18n="c.hours">Çalışma saatleri</dt><dd><span data-i18n="c.daily">Her gün</span> <span data-bind="hours">14:00 – 00:00</span></dd></div>
           </dl>
           <div class="contact__actions">
-            <a class="btn btn--sunset" href="https://www.google.com/maps/dir/?api=1&destination=Kardias+Cunda+Mithatpa%C5%9Fa+Ayval%C4%B1k" target="_blank" rel="noopener" data-i18n="c.dir">Yol Tarifi Al</a>
+            <a class="btn btn--sunset" data-maps="dir" href="https://www.google.com/maps/dir/?api=1&destination=Kardias+Cunda+Mithatpa%C5%9Fa+Ayval%C4%B1k" target="_blank" rel="noopener" data-i18n="c.dir">Yol Tarifi Al</a>
             <a class="btn btn--outline-light js-insta" href="#" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ig"/></svg>
               <span data-i18n="c.ig">Instagram'da takip et</span>
@@ -495,7 +495,7 @@
           </div>
         </div>
         <div class="map reveal">
-          <iframe title="Kardias Cunda harita" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          <iframe data-maps="embed" title="Kardias Cunda harita" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
             src="https://www.google.com/maps?q=Kardias+Cunda,+Mithatpa%C5%9Fa,+Ayval%C4%B1k&z=16&output=embed"></iframe>
         </div>
       </div>
@@ -532,15 +532,15 @@
       </nav>
       <div class="footer__contact">
         <h4 data-i18n="nav.contact">İletişim</h4>
-        <p>Mithatpaşa Mah., 20082 Sokak No:4<br>Cunda, 10405 Ayvalık / Balıkesir</p>
-        <p><a href="tel:+902663271965">0266 327 19 65</a></p>
-        <p data-i18n="c.hoursv">Her gün 14:00 – 00:00</p>
+        <p data-bind="address">Mithatpaşa Mah., 20082 Sokak No:4<br>Cunda, 10405 Ayvalık / Balıkesir</p>
+        <p><a href="tel:+902663271965"><span data-bind="phoneDisplay">0266 327 19 65</span></a></p>
+        <p><span data-i18n="c.daily">Her gün</span> <span data-bind="hours">14:00 – 00:00</span></p>
       </div>
     </div>
     <div class="footer__mark" aria-hidden="true">Kardias</div>
     <div class="container footer__bottom">
       <p>© <span id="year"></span> Kardias Cunda. <span data-i18n="foot.rights">Tüm hakları saklıdır.</span></p>
-      <p class="footer__kalimera">Kalispera · <span data-i18n="foot.hello">İyi akşamlar</span></p>
+      <p class="footer__kalimera">Kalispera · <span data-i18n="foot.hello">İyi akşamlar</span> <a class="footer__admin" href="admin.html" rel="nofollow">· <span data-i18n="foot.admin">Yönetim</span></a></p>
     </div>
     <div class="container">
       <details class="credits">

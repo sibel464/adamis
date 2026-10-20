@@ -411,6 +411,15 @@ h1 em, h2 em, h3 em { font-style: italic; color: var(--sunset); font-weight: 400
 .tag--vejetaryen, .tag--vegan { background: #e7ead9; color: #4d5430; }
 .tag--acili { background: #fbe0dc; color: #b3261e; }
 .tag--glutensiz { background: #efe6d3; color: #7a5a1c; }
+.tag--out { background: #e4e4e4; color: #555; }
+.item.is-out .item__media, .item.is-out .item__name, .item.is-out .item__price { opacity: .5; }
+
+/* Panelden girilen duyuru şeridi */
+.notice {
+  display: inline-block; margin-bottom: 1rem; padding: 7px 16px; border-radius: 999px; background: var(--sunset); color: #fff;
+  font-weight: 600; font-size: .9rem; text-decoration: none; box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .5); max-width: 100%;
+}
+a.notice:hover { background: #c95d29; }
 
 /* ---------- Yan panel (drawer) ---------- */
 body.drawer-open { overflow: hidden; }
@@ -684,6 +693,8 @@ body.drawer-open { overflow: hidden; }
 .footer__slogan { font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: #d7e0e5; max-width: 30ch; }
 .footer__bottom { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .footer__kalimera { font-family: var(--serif); font-style: italic; color: var(--sunset-soft); }
+.footer__admin { color: #7f939c; font-style: normal; font-family: var(--sans); font-size: .8rem; text-decoration: none; }
+.footer__admin:hover { color: var(--sunset-soft); }
 
 /* ---------- Cunda saati: giriş, günün saatine göre renk alır ---------- */
 .hero__bg { transition: filter 1.5s ease; }

@@ -1,41 +1,40 @@
 /* Kardias Cunda — site davranışları */
-(() => {
+(async () => {
   "use strict";
 
-  /* ============ AYARLAR — buradan düzenleyin ============ */
-  const CONFIG = {
-    phone: "+902663271965",
-    whatsapp: "902663271965",          // WhatsApp hattı (ülke koduyla, + ve boşluk olmadan)
-    instagram: "https://www.instagram.com/kardiascunda/",
-    menuUrl: "data/menu.json",
-    openHour: 14, lastBookingHour: 23   // rezervasyon saat seçenekleri
+  /* ============ İÇERİK ============
+     Telefon, saatler, galeri, etkinlikler, yorumlar ve metin düzeltmeleri data/site.json'dadır
+     (yönetim paneli: admin.html). Dosya okunamazsa aşağıdaki temel ayarlarla çalışır. */
+  const FALLBACK = {
+    contact: { phone: "+902663271965", phoneDisplay: "0266 327 19 65", whatsapp: "902663271965", instagram: "", address: "", mapsQuery: "" },
+    hours: { open: "14:00", close: "00:00" }, images: {}, rating: null, texts: {}, gallery: [], events: null, reviews: []
   };
+  let SITE = FALLBACK;
+  try {
+    const r = await fetch("data/site.json", { cache: "no-cache" });
+    if (r.ok) { const d = await r.json(); SITE = { ...FALLBACK, ...d, contact: { ...FALLBACK.contact, ...(d.contact || {}) }, hours: { ...FALLBACK.hours, ...(d.hours || {}) } }; }
+  } catch (e) { /* site.json okunamadı: temel ayarlarla devam */ }
 
-  // Galeri görselleri (Unsplash örnekleri — kendi fotoğraflarınızla değiştirin)
-  const GALLERY = [
-    { src: "img/cunda/aksamustu-tekne.jpg", w: 3, h: 4, tr: "Cunda'da akşamüstü", en: "Late afternoon in Cunda" },
-    { src: "photo-1574071318508-1cdbab80d002", w: 1, h: 1, tr: "Taş fırından Margherita", en: "Margherita from the stone oven" },
-    { src: "img/cunda/yel-degirmeni.jpg", w: 3, h: 2, tr: "Tepedeki yel değirmeni", en: "The windmill on the hill" },
-    { src: "photo-1530062845289-9109b2c9c868", w: 4, h: 3, tr: "Meze sofrası", en: "Meze table" },
-    { src: "img/cunda/gullu-sokak.jpg", w: 4, h: 3, tr: "Güllü sokaklar", en: "Lanes full of roses" },
-    { src: "photo-1560512823-829485b8bf24", w: 4, h: 5, tr: "Gün batımı kokteyli", en: "Sunset cocktail" },
-    { src: "img/cunda/tas-ev.jpg", w: 4, h: 3, tr: "Rum mahallesinin taş evleri", en: "Stone houses of the Greek quarter" },
-    { src: "photo-1621996346565-e3dbc646d9a9", w: 4, h: 3, tr: "Ev yapımı makarna", en: "Homemade pasta" },
-    { src: "img/cunda/kediler.jpg", w: 3, h: 2, tr: "Adanın kedileri", en: "The island's cats" },
-    { src: "photo-1559339352-11d035aa65de", w: 4, h: 3, tr: "Denize bakan masalar", en: "Tables by the sea" },
-    { src: "img/cunda/rum-kilisesi.jpg", w: 4, h: 3, tr: "Eski Rum kilisesi", en: "The old Greek church" },
-    { src: "photo-1611892440504-42a792e24d32", w: 4, h: 3, tr: "Otel odası", en: "Hotel room" }
-  ];
+  const hourOf = v => parseInt(String(v || "0").split(":")[0], 10) || 0;
+  const OPEN_H = hourOf(SITE.hours.open);
+  const CLOSE_H = hourOf(SITE.hours.close) || 24;   // 00:00 = gece yarısı
+  const CONFIG = {
+    phone: SITE.contact.phone,
+    whatsapp: SITE.contact.whatsapp,
+    instagram: SITE.contact.instagram,
+    menuUrl: "data/menu.json",
+    openHour: OPEN_H,
+    lastBookingHour: Math.min(23, (CLOSE_H > OPEN_H ? CLOSE_H : 24) - 1)
+  };
+  const GALLERY = SITE.gallery || [];
+  const REVIEWS = SITE.reviews || [];
 
-  // ÖRNEK yorumlar — yayına almadan önce gerçek Google yorumlarınızla değiştirin
-  const REVIEWS = [
-    { name: "Elif K.", src: "Google", rating: 5, text: "Cunda'da gün batımını izlemek için daha güzel bir yer düşünemiyorum. Girit ezmesi ve Cunda pizzası harikaydı, servis çok ilgiliydi." },
-    { name: "Mark T.", src: "Google", rating: 5, text: "The view over the harbour at sunset is unreal. Homemade pasta was excellent and the rakı-meze experience felt truly local." },
-    { name: "Burak & Selin", src: "Google", rating: 5, text: "Evlilik teklifimizi burada yaptık; masayı mumlar ve çiçeklerle hazırlamışlardı. Hayatımızın en güzel akşamıydı." },
-    { name: "Ayşe D.", src: "Google", rating: 4, text: "Taş evin atmosferi çok etkileyici. Mezeler taze, şarap listesi Ege bağlarından çok iyi seçilmiş. Hafta sonu mutlaka rezervasyon yapın." },
-    { name: "Sophie L.", src: "Google", rating: 5, text: "We stayed at the hotel and had breakfast on the terrace every morning. Charming rooms, warm hosts, perfect location." },
-    { name: "Murat Y.", src: "Google", rating: 5, text: "Pizzaların hamuru gerçekten farklı, tam kıvamında. Kalamarlı linguine ve lor tatlısı için tekrar geleceğiz." }
-  ];
+  // Panelden gizlenen bölümler: bölüm görünmez olur, ona giden bağlantılar kaldırılır
+  (SITE.hiddenSections || []).forEach(id => {
+    const sec = document.getElementById(id);
+    if (sec) sec.style.display = "none";
+    document.querySelectorAll(`a[href="#${id}"]`).forEach(a => a.remove());
+  });
 
   /* ============ Yardımcılar ============ */
   const $ = (s, el = document) => el.querySelector(s);
@@ -57,6 +56,11 @@
   const openWa = text => window.open(waLink(text), "_blank", "noopener");
 
   /* ============ Dil ============ */
+  Object.entries(SITE.texts || {}).forEach(([key, v]) => {
+    if (!v) return;
+    if (v.tr) $$(`[data-i18n="${key}"]`).forEach(el => { el.innerHTML = v.tr; });
+    if (v.en) window.I18N.en[key] = v.en;
+  });
   const trCache = new Map();
   $$("[data-i18n]").forEach(el => trCache.set(el, el.innerHTML));
   $$("[data-i18n-placeholder]").forEach(el => el.dataset.trPlaceholder = el.placeholder);
@@ -86,7 +90,70 @@
     fillGuestOptions();
     updateLiveInfo();
     renderRibbons();
+    applySite();
   }));
+
+
+  /* ============ site.json → sayfa ============ */
+  const hoursText = `${SITE.hours.open} – ${SITE.hours.close}`;
+  function applySite() {
+    const c = SITE.contact;
+    $$('[data-bind="phoneDisplay"]').forEach(el => { el.textContent = c.phoneDisplay; });
+    $$('a[href^="tel:"]').forEach(a => { a.href = "tel:" + c.phone; });
+    if (c.address) $$('[data-bind="address"]').forEach(el => { el.textContent = c.address; });
+    $$('[data-bind="hours"]').forEach(el => { el.textContent = hoursText; });
+    if (c.mapsQuery) {
+      const q = encodeURIComponent(c.mapsQuery);
+      $$('[data-maps="dir"]').forEach(a => { a.href = `https://www.google.com/maps/dir/?api=1&destination=${q}`; });
+      $$('[data-maps="embed"]').forEach(f => { const src = `https://www.google.com/maps?q=${q}&z=16&output=embed`; if (f.getAttribute("src") !== src) f.src = src; });
+    }
+    Object.entries(SITE.images || {}).forEach(([key, src]) => {
+      $$(`[data-img="${key}"]`).forEach(el => {
+        if (el.getAttribute("src") === src || el.dataset.cur === src) return;
+        el.dataset.cur = src;
+        el.removeAttribute("srcset");
+        el.src = /^photo-/.test(src) ? img(src, key === "hero" ? 1920 : 1000) : src;
+      });
+    });
+    const r = SITE.rating;
+    if (r) {
+      $$('[data-bind="ratingScore"]').forEach(el => { el.textContent = r.score; });
+      $$('[data-bind="ratingCount"]').forEach(el => { el.textContent = t(r.count); });
+      const st = $("#ratingStars");
+      if (st) { st.firstElementChild.style.setProperty("--r", r.score); st.setAttribute("aria-label", `5 / ${r.score}`); }
+      $$(".rating__sample").forEach(el => { el.hidden = r.showSampleNote === false; });
+    }
+    renderNotice();
+    renderEvents();
+  }
+
+  // Duyuru: giriş bölümünün üstünde küçük bir şerit (ör. "Bu akşam canlı müzik")
+  function renderNotice() {
+    const an = SITE.announcement, copy = $(".hero__copy");
+    let el = $("#siteNotice");
+    if (!an || !an.on || !t(an.text) || !copy) { if (el) el.remove(); return; }
+    if (!el) {
+      el = document.createElement(an.link ? "a" : "p");
+      el.id = "siteNotice"; el.className = "notice";
+      if (an.link) { el.href = an.link; if (/^https?:/.test(an.link)) { el.target = "_blank"; el.rel = "noopener"; } }
+      copy.prepend(el);
+    }
+    el.textContent = t(an.text);
+  }
+
+  function renderEvents() {
+    const box = $("#eventsList");
+    if (!box || !Array.isArray(SITE.events)) return;
+    box.innerHTML = SITE.events.map(ev => `<article class="event reveal is-visible">
+        ${ev.image ? `<div class="event__media"><img src="${/^photo-/.test(ev.image) ? img(ev.image, 700) + "&h=460" : esc(ev.image)}" loading="lazy" decoding="async" alt="" width="700" height="460"></div>` : ""}
+        <div class="event__body">
+          <span class="event__when">${esc(t(ev.when))}</span>
+          <h3>${esc(t(ev.title))}</h3>
+          <p>${esc(t(ev.desc))}</p>
+          <button type="button" class="btn btn--outline-light btn--sm js-info">${esc(ui().info)}</button>
+        </div>
+      </article>`).join("");
+  }
 
   /* ============ Navigasyon ============ */
   const progress = $("#navProgress");
@@ -171,7 +238,8 @@
       ? `<div class="item__prices">${it.prices.map(p => `<span class="item__pchip">${esc(t(p.label))}<b>${priceFmt(p.price)}</b></span>`).join("")}</div>`
       : "";
     const pic = it.image || cat.image;
-    return `<article class="item" data-item="${cat.id}:${cat.items.indexOf(it)}" tabindex="0" role="button" aria-haspopup="dialog" aria-label="${esc(t(it.name))}">
+    const out = it.soldOut ? `<span class="tag tag--out">${esc(ui().soldOut)}</span>` : "";
+    return `<article class="item${it.soldOut ? " is-out" : ""}" data-item="${cat.id}:${cat.items.indexOf(it)}" tabindex="0" role="button" aria-haspopup="dialog" aria-label="${esc(t(it.name))}">
       <div class="item__media">
         <img src="${img(pic, 220)}&h=220" srcset="${img(pic, 220)}&h=220 1x, ${img(pic, 440)}&h=440 2x" width="110" height="110" loading="lazy" decoding="async" alt="${esc(t(it.name))}">
         ${(it.tags || []).includes("sef") ? `<span class="item__badge" title="${esc(ui().tags.sef)}">✦</span>` : ""}
@@ -184,7 +252,7 @@
         ${it.meta ? `<p class="item__meta">${esc(it.meta)}</p>` : ""}
         ${it.desc ? `<p class="item__desc">${esc(t(it.desc))}</p>` : ""}
         ${prices}
-        ${tags ? `<div class="tags">${tags}</div>` : ""}
+        ${tags || out ? `<div class="tags">${out}${tags}</div>` : ""}
       </div>
     </article>`;
   }
@@ -296,7 +364,7 @@
     if (!MENU) return;
     const q = fold(state.q.trim());
     app.innerHTML = `<div class="mview">${q ? searchHTML(q) : homeHTML()}</div>`;
-    $("#setMenu").hidden = !!q;
+    $("#setMenu").hidden = !!q || !MENU.setMenu;
     if (drawerCat) renderDrawer(drawerCat);
   }
 
@@ -412,7 +480,8 @@
 
   function sheetHTML(cat, it) {
     const pic = it.image || cat.image;
-    const tags = (it.tags || []).map(tg => `<span class="tag tag--${tg}">${esc(ui().tags[tg] || tg)}</span>`).join("");
+    const tags = (it.soldOut ? `<span class="tag tag--out">${esc(ui().soldOut)}</span>` : "")
+      + (it.tags || []).map(tg => `<span class="tag tag--${tg}">${esc(ui().tags[tg] || tg)}</span>`).join("");
     const priceBlock = it.prices
       ? `<div class="sheet__prices">${it.prices.map(p => `<div class="sheet__pr"><span>${esc(t(p.label))}</span><b>${priceFmt(p.price)}</b></div>`).join("")}</div>`
       : `<p class="sheet__price">${esc(shortPrice(it))}</p>`;
@@ -582,10 +651,13 @@
     if (e.key === "Escape") { searchEl.value = ""; state.q = ""; renderMenu(); }
   });
 
-  fetch(CONFIG.menuUrl)
+  fetch(CONFIG.menuUrl, { cache: "no-cache" })
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(data => {
       MENU = data;
+      // Panelde "gizli" işaretlenen kategori, ürün ve fiks menü sitede görünmez
+      MENU.categories = MENU.categories.filter(c => !c.hidden).map(c => ({ ...c, items: c.items.filter(it => !it.hidden) }));
+      if (MENU.setMenu && MENU.setMenu.hidden) MENU.setMenu = null;
       renderSetMenu();
       renderMenu();
       route(false);
@@ -750,10 +822,12 @@
     a.addEventListener("click", e => { e.preventDefault(); openWa(`${ui().waHello} ${ui().waGeneral}`); });
   });
   $$(".js-insta").forEach(a => { a.href = CONFIG.instagram; });
-  $$(".js-info").forEach(b => b.addEventListener("click", () => {
+  document.addEventListener("click", e => {
+    const b = e.target.closest(".js-info");
+    if (!b) return;
     const title = $("h3", b.closest(".event")).textContent;
     openWa(`${ui().waHello} ${ui().waInfo(title)}`);
-  }));
+  });
   $$(".js-room").forEach(a => a.addEventListener("click", e => { e.preventDefault(); openWa(`${ui().waHello} ${ui().waRoom}`); }));
   $$(".js-terrace").forEach(a => a.addEventListener("click", () => {
     form.elements.terrace.value = "yes";
@@ -806,10 +880,10 @@
     $$("[data-eve]").forEach(el => { el.textContent = hm(times[el.dataset.eve]); });
 
     const hour = Number(new Intl.DateTimeFormat("en-GB", { timeZone: TZ, hour: "2-digit", hourCycle: "h23" }).format(now));
-    const open = hour >= 14; // her gün 14:00 – 00:00
+    const open = CLOSE_H > OPEN_H ? (hour >= OPEN_H && hour < CLOSE_H) : (hour >= OPEN_H || hour < CLOSE_H);
     const status = $("#openStatus");
     status.classList.toggle("is-open", open);
-    status.textContent = open ? u.openNow : u.closedNow;
+    status.textContent = open ? u.openNow : u.closedNow(SITE.hours.open);
   }
   updateLiveInfo();
   setInterval(updateLiveInfo, 60 * 1000);
@@ -883,6 +957,7 @@
   /* ============ Başlat ============ */
   $("#year").textContent = today.getFullYear();
   applyLang();
+  applySite();
   renderGallery();
   observeReveal(document);
 })();

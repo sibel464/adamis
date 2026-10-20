@@ -125,6 +125,7 @@ window.I18N = {
     "c.phone": "Phone",
     "c.hours": "Opening hours",
     "c.hoursv": "Daily 14:00 – 00:00",
+    "c.daily": "Daily",
     "c.dir": "Get Directions",
     "c.ig": "Follow on Instagram",
 
@@ -132,6 +133,7 @@ window.I18N = {
     "foot.links": "Quick Links",
     "foot.rights": "All rights reserved.",
     "foot.hello": "Good evening",
+    "foot.admin": "Admin",
     "foot.credits": "Photo credits",
     "foot.creditsnote": "Photos of Cunda are from Wikimedia Commons, used under the licences listed. Food and drink images are from Unsplash.",
     "mb.call": "Call"
@@ -180,7 +182,9 @@ window.I18N = {
         b: ["Gün batımı", "Rakı & meze", "Ege bağlarından şarap", "Canlı müzik", "Gece ışıkları", "Kalispera Cunda"]
       },
       openNow: "Şu an açık",
-      closedNow: "Şu an kapalı · 14:00'te açılıyor"
+      closedNow: h => `Şu an kapalı · açılış ${h}`,
+      soldOut: "Bugün yok",
+      info: "Bilgi Al"
     },
     en: {
       noResults: "Nothing matches your search. Try another word.",
@@ -223,7 +227,9 @@ window.I18N = {
         b: ["Sunset", "Rakı & meze", "Aegean wines", "Live music", "Evening lights", "Kalispera Cunda"]
       },
       openNow: "Open now",
-      closedNow: "Closed now · opens at 14:00"
+      closedNow: h => `Closed now · opens at ${h}`,
+      soldOut: "Not available today",
+      info: "Get Info"
     }
   }
 };
