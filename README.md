@@ -9,9 +9,24 @@ Tek sayfalık, statik site (derleme gerekmez).
 index.html        Sayfa (Türkçe metinler burada)
 css/style.css     Tasarım (renkler en üstte :root içinde)
 js/i18n.js        İngilizce çeviriler
-js/main.js        Davranışlar + AYARLAR (telefon, WhatsApp, Instagram, galeri, yorumlar)
-data/menu.json    Menü — ürün, fiyat ve etiketleri buradan düzenleyin
+js/main.js        Site davranışları
+data/menu.json    Menü (ürünler, fiyatlar, kategoriler, fiks menü)
+data/site.json    Site içeriği (iletişim, saatler, fotoğraflar, galeri, etkinlik, yorum, duyuru, metinler)
+admin.html        Yönetim paneli (js/admin.js, css/admin.css)
 ```
+
+## Yönetim paneli
+Adres: https://sibel464.github.io/kardias-cunda/admin.html (footer'daki "Yönetim" bağlantısı da oraya gider).
+Giriş için bir kez GitHub erişim anahtarı oluşturulur (adımlar giriş ekranında yazıyor).
+"Kaydet ve yayınla" değişiklikleri GitHub'a yazar, site 1–2 dakikada güncellenir.
+Panel kullanıldıktan sonra bilgisayarda kod düzenleyecekseniz önce `git pull` yapın.
+
+Panelden yapılabilenler:
+- Menü: ürün/kategori/bölüm ekleme-silme-sıralama, fiyat, fotoğraf, etiketler, tüm menüde arama,
+  ürünü kopyalama ve başka kategoriye taşıma, "Bugün yok" işareti, ürünü/kategoriyi gizleme
+- Fiks menü (gizlenebilir), galeri, etkinlikler, yorumlar ve puan
+- İletişim bilgileri, çalışma saatleri, ana fotoğraflar, sitedeki tüm başlık ve metinler (TR/EN)
+- Duyuru şeridi ve bölümleri (galeri, konaklama vb.) sitede gizleme/gösterme
 
 ## Yerelde çalıştırma
 Menü `fetch` ile yüklendiği için dosyayı çift tıklayarak değil, bir sunucuyla açın:
