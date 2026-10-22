@@ -86,6 +86,7 @@
     applyLang();
     renderMenu();
     renderSetMenu();
+    renderToday();
     renderGallery();
     fillGuestOptions();
     updateLiveInfo();
@@ -112,7 +113,7 @@
         if (el.getAttribute("src") === src || el.dataset.cur === src) return;
         el.dataset.cur = src;
         el.removeAttribute("srcset");
-        el.src = /^photo-/.test(src) ? img(src, key === "hero" ? 1920 : 1000) : src;
+        el.src = /^photo-/.test(src) ? img(src, key === "hero" ? 1200 : 1000) : src;
       });
     });
     const r = SITE.rating;
@@ -366,6 +367,20 @@
     app.innerHTML = `<div class="mview">${q ? searchHTML(q) : homeHTML()}</div>`;
     $("#setMenu").hidden = !!q || !MENU.setMenu;
     if (drawerCat) renderDrawer(drawerCat);
+  }
+
+  // Girişteki "Bugün ocakta" kartı: mutfaktan şefin önerileri ve favoriler (tükenmeyenler)
+  function renderToday() {
+    const list = $("#todayList");
+    if (!MENU || !list) return;
+    const score = it => ((it.tags || []).includes("sef") ? 2 : 0) + ((it.tags || []).includes("favori") ? 1 : 0);
+    const picks = MENU.categories.filter(c => c.section === MENU.sections[0].id)
+      .flatMap(c => c.items.filter(it => !it.soldOut && score(it)).map(it => ({ it, c })))
+      .sort((a, b) => score(b.it) - score(a.it)).slice(0, 4);
+    list.closest(".today-card").hidden = !picks.length;
+    list.innerHTML = picks.map(({ it, c }) => `<li><a href="#menu/${c.id}">
+        <span class="today-card__name">${esc(t(it.name))}</span><span class="today-card__dots" aria-hidden="true"></span>
+        <span class="today-card__price">${esc(shortPrice(it))}</span></a></li>`).join("");
   }
 
   function renderSetMenu() {
@@ -659,6 +674,7 @@
       MENU.categories = MENU.categories.filter(c => !c.hidden).map(c => ({ ...c, items: c.items.filter(it => !it.hidden) }));
       if (MENU.setMenu && MENU.setMenu.hidden) MENU.setMenu = null;
       renderSetMenu();
+      renderToday();
       renderMenu();
       route(false);
     })
@@ -859,8 +875,6 @@
     let set = sunsetAt(now), tomorrow = false;
     if (now > set) { set = sunsetAt(new Date(now.getTime() + 864e5)); tomorrow = true; }
 
-    $("#sunsetLabel").textContent = tomorrow ? u.sunTomorrow : u.sunToday;
-    $("#sunsetTime").textContent = hm(set);
     $("#floatSunLabel").textContent = tomorrow ? u.sunTomorrow : u.sunToday;
     $("#floatSunTime").textContent = hm(set);
 
@@ -869,8 +883,6 @@
     const istHour = Number(new Intl.DateTimeFormat("en-GB", { timeZone: TZ, hour: "2-digit", hourCycle: "h23" }).format(now));
     const phase = mins >= -90 && mins <= 40 ? "golden" : (mins > 40 || istHour < 6) ? "night" : "day";
     document.documentElement.dataset.phase = phase;
-    $("#sunPhase").textContent = u.phase[phase];
-    $("#sunsetHint").textContent = tomorrow ? u.sunHintTomorrow : u.sunHint(Math.round((set - now) / 6e4));
 
     const times = { sunset: set };
     $$("[data-eve]").forEach(el => { el.textContent = hm(times[el.dataset.eve]); });

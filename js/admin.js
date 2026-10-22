@@ -26,7 +26,7 @@
     ["İletişim & Footer", [["c.title", "İletişim başlığı", 1], ["foot.slogan", "Footer sloganı"]]]
   ];
   const IMAGE_SLOTS = [
-    ["hero", "Giriş (ana) fotoğrafı", "Geniş, yatay; en az 1920 px"],
+    ["hero", "Giriş (tabak) fotoğrafı", "Kare, yemeğin üstten çekimi olursa en iyisi; en az 1000 px"],
     ["story", "Hikâye – kemerli fotoğraf", "Taş ev / mekân; yatay veya dikey"],
     ["storyInset", "Hikâye – küçük yuvarlak", "Kare olursa en iyisi"]
   ];

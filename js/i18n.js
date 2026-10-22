@@ -30,6 +30,9 @@ window.I18N = {
     "feat.3.t": "Ayvalık olive oil",
     "feat.3.d": "From olive oil dishes to greens, on every plate",
 
+    "today.title": "On the stove today",
+    "today.more": "Full menu →",
+
     "info.hours": "Open daily",
     "info.where": "Location",
     "info.wherev": "Halk Caddesi, Cunda",
@@ -151,9 +154,6 @@ window.I18N = {
       waSet: "Adamis Ev Sofrası için yer ayırtmak istiyorum.",
       sunToday: "Bugün gün batımı",
       sunTomorrow: "Yarın gün batımı",
-      sunHint: m => m > 180 ? "Akşam yemeği için yerinizi ayırtın" : `Gün batımına ${m >= 60 ? Math.floor(m / 60) + " sa " : ""}${m % 60} dk`,
-      sunHintTomorrow: "Yarın akşam için yerinizi ayırtın",
-      phase: { day: "Gündüz", golden: "Altın saat", night: "Akşam" },
       ribbons: {
         a: ["Kabak çiçeği dolması", "Yaprak sarma", "Ege otları", "Tencere yemekleri", "Ayvalık zeytinyağı"],
         b: ["Her sabah taze", "Kuru fasulye & pilav", "İzmir köfte", "Ev tatlıları", "Paket servis", "Kalimera Cunda"]
@@ -195,9 +195,6 @@ window.I18N = {
       waSet: "I would like to book a table for the Adamis Home Table menu.",
       sunToday: "Sunset today",
       sunTomorrow: "Sunset tomorrow",
-      sunHint: m => m > 180 ? "Reserve your table now" : `${m >= 60 ? Math.floor(m / 60) + " h " : ""}${m % 60} min to sunset`,
-      sunHintTomorrow: "Reserve your table for tomorrow evening",
-      phase: { day: "Daytime", golden: "Golden hour", night: "Evening" },
       ribbons: {
         a: ["Stuffed zucchini flowers", "Vine leaf sarma", "Aegean greens", "Home-style stews", "Ayvalık olive oil"],
         b: ["Fresh every morning", "White beans & pilaf", "İzmir köfte", "Homemade desserts", "Takeaway", "Kalimera Cunda"]

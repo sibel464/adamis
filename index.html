@@ -6,7 +6,7 @@
   <title>Cunda Adamis | Zeytinyağlı Ev Yemekleri – Ayvalık</title>
   <meta name="description" content="Cunda Adamis: Cunda'nın Halk Caddesi'nde zeytinyağlı ev yemekleri. Kabak çiçeği dolması, yaprak sarma, Ege otları, tencere yemekleri ve ev tatlıları. Paket servis de var.">
   <meta name="keywords" content="Cunda ev yemekleri, Cunda zeytinyağlı, Ayvalık ev yemekleri, kabak çiçeği dolması, Cunda lokanta, Adamis Cunda">
-  <meta name="theme-color" content="#123447">
+  <meta name="theme-color" content="#26402d">
   <!-- Önizleme sürümü: arama motorları listelemesin. Gerçek yayında bu satırı silin. -->
   <meta name="robots" content="noindex, nofollow">
 
@@ -16,13 +16,14 @@
   <meta property="og:locale" content="tr_TR">
   <meta property="og:locale:alternate" content="en_US">
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23123447'/%3E%3Cpath d='M14 46a18 18 0 0 1 36 0' fill='none' stroke='%23e0703a' stroke-width='5'/%3E%3Cpath d='M10 50h44' stroke='%23f4ede2' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" href="img/logo/favicon.png">
+  <link rel="apple-touch-icon" href="img/logo/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1596797038530-2c107229654b?w=1200&q=70&auto=format&fit=crop" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="img/cunda/liman-1920.jpg" imagesrcset="img/cunda/liman-960.jpg 960w, img/cunda/liman-1920.jpg 1920w" imagesizes="100vw" fetchpriority="high">
   <link rel="stylesheet" href="css/style.css">
 
   <script type="application/ld+json">
@@ -59,8 +60,7 @@
     <span class="nav__progress" id="navProgress" aria-hidden="true"></span>
     <div class="nav__inner container">
       <a class="logo" href="#top" aria-label="Cunda Adamis">
-        <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 30a12 12 0 0 1 24 0" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M4 33h32M9 37h22" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="30" r="4" fill="var(--sunset)"/></svg>
-        <span class="logo__text">Adamis<small>Cunda</small></span>
+        <img class="logo__img" src="img/logo/adamis-logo.jpg" width="560" height="560" alt="Adamis Ev Yemekleri · Ege Yöresi">
       </a>
 
       <nav class="nav__menu" id="navMenu" aria-label="Ana menü">
@@ -89,34 +89,84 @@
   <main id="main">
     <!-- 2. HERO -->
     <section class="hero wave wave--cream" id="top">
-      <img class="hero__bg" data-img="hero" src="img/cunda/liman-1920.jpg"
-           srcset="img/cunda/liman-960.jpg 960w, img/cunda/liman-1920.jpg 1920w"
-           sizes="100vw" width="1920" height="1285" alt="Cunda limanı: tepede yel değirmeni, ortada Taksiyarhis Kilisesi, önde tekneler" fetchpriority="high">
-      <div class="hero__shade"></div>
       <div class="hero__content container">
         <div class="hero__copy">
-          <p class="eyebrow eyebrow--light" data-i18n="hero.eyebrow">Cunda Adası · Ayvalık</p>
+          <p class="eyebrow" data-i18n="hero.eyebrow">Cunda Adası · Ayvalık</p>
           <h1 class="hero__title" data-i18n="hero.title">Cunda'nın kalbinde <em>zeytinyağlı</em> ev yemekleri</h1>
           <p class="hero__lead" data-i18n="hero.lead">Her sabah taze pişen zeytinyağlılar, tencere yemekleri ve Ege otları. Adanın meşhur kabak çiçeği dolmasıyla.</p>
           <div class="hero__actions">
             <a href="#rezervasyon" class="btn btn--sunset" data-i18n="cta.book">Masa Ayırt</a>
-            <a href="#menu" class="btn btn--ghost" data-i18n="cta.menu">Menüyü Gör</a>
+            <a href="#menu" class="btn btn--line" data-i18n="cta.menu">Menüyü Gör</a>
           </div>
         </div>
 
-        <aside class="sunset-card" aria-live="polite">
-          <svg class="sunset-card__sun" viewBox="0 0 64 40" aria-hidden="true">
-            <path class="sunset-card__rays" d="M32 6v5M14 13l3.5 3.5M50 13l-3.5 3.5M6 28h5M53 28h5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
-            <path d="M18 30a14 14 0 0 1 28 0" fill="currentColor"/>
-            <path d="M4 34h56M12 39h40" stroke="#fff" stroke-width="2.4" stroke-linecap="round" opacity=".85"/>
-          </svg>
-          <div>
-            <span class="sunset-card__phase" id="sunPhase"></span>
-            <span class="sunset-card__label" id="sunsetLabel">Bugün gün batımı</span>
-            <strong class="sunset-card__time" id="sunsetTime">--:--</strong>
-            <span class="sunset-card__hint" id="sunsetHint"></span>
+        <div class="hero__visual">
+          <div class="plate">
+            <svg class="plate__ring" viewBox="0 0 200 200" aria-hidden="true">
+              <defs><path id="ringPath" d="M100 100m-91 0a91 91 0 1 1 182 0a91 91 0 1 1-182 0"/></defs>
+              <text><textPath href="#ringPath" textLength="568" lengthAdjust="spacing">ZEYTİNYAĞLI · EV YEMEKLERİ · CUNDA ADASI · ZEYTİNYAĞLI · EV YEMEKLERİ · AYVALIK ·</textPath></text>
+            </svg>
+            <div class="plate__dish">
+              <img data-img="hero" src="https://images.unsplash.com/photo-1596797038530-2c107229654b?w=1200&q=70&auto=format&fit=crop" width="1000" height="1000" alt="Ocaktan yeni inmiş bir tencere yemeği" fetchpriority="high">
+            </div>
+            <svg class="plate__oil" viewBox="0 0 100 100" aria-hidden="true">
+              <defs>
+                <linearGradient id="oilStream" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9b23a"/><stop offset=".5" stop-color="#e8c65a"/><stop offset="1" stop-color="#c99a24"/></linearGradient>
+                <linearGradient id="oilInside" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8f8a1c"/><stop offset=".35" stop-color="#c9b236"/><stop offset=".7" stop-color="#b09a26"/><stop offset="1" stop-color="#6f6c14"/></linearGradient>
+                <linearGradient id="glassEdge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e9f0dc" stop-opacity=".75"/><stop offset=".12" stop-color="#e9f0dc" stop-opacity=".08"/><stop offset=".88" stop-color="#e9f0dc" stop-opacity=".05"/><stop offset="1" stop-color="#cfd9bf" stop-opacity=".6"/></linearGradient>
+                <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7d8288"/><stop offset=".3" stop-color="#f1f3f4"/><stop offset=".55" stop-color="#a9aeb3"/><stop offset="1" stop-color="#5d6268"/></linearGradient>
+                <radialGradient id="oilPool" cx=".45" cy=".4" r=".6"><stop offset="0" stop-color="#f7e39a" stop-opacity=".95"/><stop offset=".55" stop-color="#dcae35" stop-opacity=".8"/><stop offset="1" stop-color="#b8861c" stop-opacity="0"/></radialGradient>
+                <filter id="oilSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation=".35"/></filter>
+                <filter id="bottleShadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="1.4" dy="2.2" stdDeviation="1.6" flood-color="#000" flood-opacity=".35"/></filter>
+              </defs>
+
+              <ellipse class="oil__pool" cx="60.6" cy="46.4" rx="3.6" ry="1.4" fill="url(#oilPool)"/>
+              <ellipse cx="59.7" cy="45.9" rx="1.1" ry=".32" fill="#fffbe9" opacity=".75"/>
+
+              <path fill="url(#oilStream)" opacity=".93" d="M65.35 18.3C63.9 21.4 61.7 28.4 60.15 46.2L60.95 46.2C62.3 28.3 64.6 21.1 66.65 17.9Z">
+                <animate attributeName="d" dur="2.4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.33;.66;1" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1" values="M65.35 18.3C63.9 21.4 61.7 28.4 60.15 46.2L60.95 46.2C62.3 28.3 64.6 21.1 66.65 17.9Z;M65.35 18.3C63.6 21.6 61.2 28.6 60.05 46.2L60.85 46.2C61.8 28.5 64.3 21.3 66.65 17.9Z;M65.35 18.3C64.1 21.2 62.1 28.1 60.25 46.2L61.05 46.2C62.7 28.0 64.8 20.9 66.65 17.9Z;M65.35 18.3C63.9 21.4 61.7 28.4 60.15 46.2L60.95 46.2C62.3 28.3 64.6 21.1 66.65 17.9Z"/>
+              </path>
+              <path fill="none" stroke="#fff8dc" stroke-width=".22" stroke-linecap="round" opacity=".8" d="M65.7 18.6C64.5 21.6 62.5 28.5 61.05 45.5">
+                <animate attributeName="d" dur="2.4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.33;.66;1" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1" values="M65.7 18.6C64.5 21.6 62.5 28.5 61.05 45.5;M65.7 18.6C64.2 21.8 62.0 28.7 60.95 45.5;M65.7 18.6C64.7 21.4 62.9 28.2 61.15 45.5;M65.7 18.6C64.5 21.6 62.5 28.5 61.05 45.5"/>
+              </path>
+
+              <g class="oil__bottle" filter="url(#bottleShadow)">
+                <g transform="translate(66 18) rotate(-118) scale(.56)">
+                  <!-- metal dökme ucu -->
+                  <rect x="-.75" y="-.4" width="1.5" height="6.6" rx=".5" fill="url(#steel)"/>
+                  <rect x="-3.1" y="6" width="6.2" height="3.4" rx=".9" fill="url(#steel)"/>
+                  <rect x="-3.1" y="7.3" width="6.2" height=".5" fill="#4b5056" opacity=".5"/>
+                  <!-- yağ (camın içinde) -->
+                  <path d="M-2 9.6H2V18.2C2 20.8 7.2 21.8 7.2 27V61.6Q7.2 63.2 5.6 63.2H-5.6Q-7.2 63.2-7.2 61.6V27C-7.2 21.8-2 20.8-2 18.2Z" fill="url(#oilInside)"/>
+                  <ellipse cx="0" cy="61.4" rx="5" ry="1.1" fill="#e8dc8a" opacity=".55"/>
+                  <!-- cam -->
+                  <path d="M-2.6 9.2H2.6V18C2.6 20.9 8 21.9 8 27V62Q8 64 6 64H-6Q-8 64-8 62V27C-8 21.9-2.6 20.9-2.6 18Z" fill="url(#glassEdge)" stroke="#dfe8cf" stroke-opacity=".7" stroke-width=".45"/>
+                  <!-- etiket -->
+                  <rect x="-7.3" y="35" width="14.6" height="18.5" rx=".6" fill="#f3ead3"/>
+                  <rect x="-7.3" y="35" width="14.6" height="18.5" rx=".6" fill="none" stroke="#c9b98f" stroke-width=".3"/>
+                  <path d="M-4.6 39.2c2.2-1.6 6.6-1.6 9.2 0" fill="none" stroke="#5b7a35" stroke-width=".35"/>
+                  <ellipse cx="-2" cy="38.6" rx="1.1" ry=".45" transform="rotate(-20 -2 38.6)" fill="#5b7a35"/>
+                  <ellipse cx="1.6" cy="38.3" rx="1.1" ry=".45" transform="rotate(18 1.6 38.3)" fill="#5b7a35"/>
+                  <text x="0" y="44.4" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="3.6" letter-spacing=".25" fill="#26402d">ADAMIS</text>
+                  <text x="0" y="47.6" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="1.55" letter-spacing=".3" fill="#7a6a45">SIZMA ZEYTİNYAĞI</text>
+                  <text x="0" y="50.6" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="1.3" letter-spacing=".3" fill="#9a8a62">AYVALIK · 500 ml</text>
+                  <!-- cam parlamaları -->
+                  <rect x="-6.6" y="24" width="1.3" height="36" rx=".65" fill="#fff" opacity=".55" filter="url(#oilSoft)"/>
+                  <rect x="4.6" y="27" width=".6" height="30" rx=".3" fill="#fff" opacity=".3" filter="url(#oilSoft)"/>
+                  <rect x="-1.9" y="10" width=".6" height="7" rx=".3" fill="#fff" opacity=".5"/>
+                </g>
+              </g>
+            </svg>
+            <svg class="plate__sprig plate__sprig--a" viewBox="0 0 220 120" aria-hidden="true"><use href="#i-branch"/></svg>
+            <svg class="plate__sprig plate__sprig--b" viewBox="0 0 220 120" aria-hidden="true"><use href="#i-branch"/></svg>
           </div>
+
+        <aside class="today-card" aria-labelledby="todayTitle">
+          <p class="today-card__label" id="todayTitle"><span class="today-card__steam" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h16a8 7 0 0 1-16 0zM2 12h20M9 8c0-1.2 1.2-1.6 1.2-2.8M14 8c0-1.2 1.2-1.6 1.2-2.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="today.title">Bugün ocakta</span></p>
+          <ul class="today-card__list" id="todayList"></ul>
+          <a href="#menu" class="today-card__more" data-i18n="today.more">Tüm menü →</a>
         </aside>
+        </div>
       </div>
     </section>
 
@@ -436,14 +486,13 @@
   <!-- 12. FOOTER -->
   <footer class="footer">
     <svg class="footer__wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0 40 C 240 80 480 80 720 45 S 1200 5 1440 40 V90 H0Z" fill="#163d52"/>
+      <path d="M0 40 C 240 80 480 80 720 45 S 1200 5 1440 40 V90 H0Z" fill="#2d4a34"/>
       <path d="M0 60 C 300 95 540 30 780 55 S 1180 95 1440 55 V90 H0Z" fill="var(--navy-2)"/>
     </svg>
     <div class="container footer__grid">
       <div class="footer__brand">
         <a class="logo logo--light" href="#top" aria-label="Cunda Adamis">
-          <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 30a12 12 0 0 1 24 0" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M4 33h32M9 37h22" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="30" r="4" fill="var(--sunset)"/></svg>
-          <span class="logo__text">Adamis<small>Cunda</small></span>
+          <img class="logo__img" src="img/logo/adamis-logo.jpg" width="560" height="560" alt="Adamis Ev Yemekleri · Ege Yöresi">
         </a>
         <p class="footer__slogan" data-i18n="foot.slogan">Ayvalık zeytinyağıyla, evde nasıl pişiyorsa öyle.</p>
         <div class="social">
@@ -467,7 +516,6 @@
         <p><span data-i18n="c.daily">Her gün</span> <span data-bind="hours">09:00 – 22:30</span></p>
       </div>
     </div>
-    <div class="footer__mark" aria-hidden="true">Adamis</div>
     <div class="container footer__bottom">
       <p>© <span id="year"></span> Cunda Adamis. <span data-i18n="foot.rights">Tüm hakları saklıdır.</span></p>
       <p class="footer__kalimera">Kali orexi · <span data-i18n="foot.hello">Afiyet olsun</span> <a class="footer__admin" href="admin.html" rel="nofollow">· <span data-i18n="foot.admin">Yönetim</span></a></p>
