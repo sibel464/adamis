@@ -13,9 +13,11 @@
     "close": "22:30"
   },
   "images": {
-    "hero": "photo-1596797038530-2c107229654b",
+    "hero": "photo-1469796466635-455ede028aca",
     "story": "img/cunda/tas-ev.jpg",
-    "storyInset": "img/cunda/gullu-sokak.jpg"
+    "storyInset": "img/cunda/gullu-sokak.jpg",
+    "story2": "img/cunda/aksamustu-tekne.jpg",
+    "dish": "photo-1596797038530-2c107229654b"
   },
   "rating": {
     "score": "4.2",
@@ -105,38 +107,6 @@
       "en": "The old Greek church"
     }
   ],
-  "events": [
-    {
-      "image": "photo-1588166524941-3bf61a9c41db",
-      "when": {
-        "tr": "Her gün",
-        "en": "Every day"
-      },
-      "title": {
-        "tr": "Paket Servis",
-        "en": "Takeaway"
-      },
-      "desc": {
-        "tr": "Tencere yemekleri ve zeytinyağlılar paket olarak da hazırlanır.",
-        "en": "Stews and olive oil dishes are also packed to take away."
-      }
-    },
-    {
-      "image": "photo-1530062845289-9109b2c9c868",
-      "when": {
-        "tr": "10 – 40 kişi",
-        "en": "10 – 40 guests"
-      },
-      "title": {
-        "tr": "Kalabalık Sofralar",
-        "en": "Group Meals"
-      },
-      "desc": {
-        "tr": "Aile ve arkadaş grupları için önceden haber verin, sofranızı hazırlayalım.",
-        "en": "Let us know in advance and we will set the table for your family or friends."
-      }
-    }
-  ],
   "reviews": [
     {
       "name": "Elif K.",
@@ -162,8 +132,5 @@
       "rating": 5,
       "text": "İzmir köfte ve lor tatlısı için tekrar geleceğiz. Güler yüzlü servis, ev sıcaklığında bir yer."
     }
-  ],
-  "hiddenSections": [
-    "etkinlikler"
   ]
 }

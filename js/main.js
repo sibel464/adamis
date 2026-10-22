@@ -85,12 +85,10 @@
     lang = b.dataset.lang;
     applyLang();
     renderMenu();
-    renderSetMenu();
     renderToday();
     renderGallery();
     fillGuestOptions();
     updateLiveInfo();
-    renderRibbons();
     applySite();
   }));
 
@@ -113,7 +111,7 @@
         if (el.getAttribute("src") === src || el.dataset.cur === src) return;
         el.dataset.cur = src;
         el.removeAttribute("srcset");
-        el.src = /^photo-/.test(src) ? img(src, key === "hero" ? 1200 : 1000) : src;
+        el.src = /^photo-/.test(src) ? img(src, key === "heroBg" ? 1920 : 1000) : src;
       });
     });
     const r = SITE.rating;
@@ -125,7 +123,6 @@
       $$(".rating__sample").forEach(el => { el.hidden = r.showSampleNote === false; });
     }
     renderNotice();
-    renderEvents();
   }
 
   // Duyuru: giriş bölümünün üstünde küçük bir şerit (ör. "Bu akşam canlı müzik")
@@ -142,19 +139,6 @@
     el.textContent = t(an.text);
   }
 
-  function renderEvents() {
-    const box = $("#eventsList");
-    if (!box || !Array.isArray(SITE.events)) return;
-    box.innerHTML = SITE.events.map(ev => `<article class="event reveal is-visible">
-        ${ev.image ? `<div class="event__media"><img src="${/^photo-/.test(ev.image) ? img(ev.image, 700) + "&h=460" : esc(ev.image)}" loading="lazy" decoding="async" alt="" width="700" height="460"></div>` : ""}
-        <div class="event__body">
-          <span class="event__when">${esc(t(ev.when))}</span>
-          <h3>${esc(t(ev.title))}</h3>
-          <p>${esc(t(ev.desc))}</p>
-          <button type="button" class="btn btn--outline-light btn--sm js-info">${esc(ui().info)}</button>
-        </div>
-      </article>`).join("");
-  }
 
   /* ============ Navigasyon ============ */
   const progress = $("#navProgress");
@@ -311,28 +295,7 @@
       </section>`;
     }).join("");
 
-    const picks = MENU.categories.flatMap(c => c.items.filter(it => (it.tags || []).includes("sef")).map(it => ({ it, c })));
-    const picksHTML = picks.length ? `
-      <section class="picks" aria-labelledby="picksTitle">
-        <header class="picks__head">
-          <h3 id="picksTitle"><span aria-hidden="true">✦</span> ${esc(ui().chefPicks)}</h3>
-          <p>${esc(ui().chefPicksLead)}</p>
-        </header>
-        <div class="picks__track">
-          ${picks.map(({ it, c }) => `
-            <a class="pick" href="#menu/${c.id}">
-              <span class="pick__img"><img src="${img(it.image || c.image, 560)}&h=380" width="560" height="380" loading="lazy" decoding="async" alt=""></span>
-              <span class="pick__body">
-                <span class="pick__cat">${esc(t(c.name))}</span>
-                <span class="pick__name">${esc(t(it.name))}</span>
-                ${it.desc ? `<span class="pick__desc">${esc(t(it.desc))}</span>` : ""}
-                <span class="pick__price">${esc(shortPrice(it))}</span>
-              </span>
-            </a>`).join("")}
-        </div>
-      </section>` : "";
-
-    return `<div class="mhome">${sections}${picksHTML}</div>`;
+    return `<div class="mhome">${sections}</div>`;
   }
 
   /* --- Arama sonuçları (sayfada) --- */
@@ -365,7 +328,6 @@
     if (!MENU) return;
     const q = fold(state.q.trim());
     app.innerHTML = `<div class="mview">${q ? searchHTML(q) : homeHTML()}</div>`;
-    $("#setMenu").hidden = !!q || !MENU.setMenu;
     if (drawerCat) renderDrawer(drawerCat);
   }
 
@@ -383,15 +345,6 @@
         <span class="today-card__price">${esc(shortPrice(it))}</span></a></li>`).join("");
   }
 
-  function renderSetMenu() {
-    if (!MENU || !MENU.setMenu) return;
-    const s = MENU.setMenu, box = $("#setMenu");
-    $("#setMenuTitle").textContent = t(s.title);
-    $(".setmenu__desc", box).textContent = t(s.desc);
-    $(".setmenu__list", box).innerHTML = s.items.map(i => `<li>${esc(t(i))}</li>`).join("");
-    $(".setmenu__amount", box).textContent = priceFmt(s.price);
-    $(".setmenu__per", box).textContent = t(s.per);
-  }
 
   /* --- Yan panel (drawer) --- */
   let drawerCat = null, drawerPushed = false, drawerReturnFocus = null;
@@ -672,8 +625,6 @@
       MENU = data;
       // Panelde "gizli" işaretlenen kategori, ürün ve fiks menü sitede görünmez
       MENU.categories = MENU.categories.filter(c => !c.hidden).map(c => ({ ...c, items: c.items.filter(it => !it.hidden) }));
-      if (MENU.setMenu && MENU.setMenu.hidden) MENU.setMenu = null;
-      renderSetMenu();
       renderToday();
       renderMenu();
       route(false);
@@ -837,17 +788,6 @@
     a.addEventListener("click", e => { e.preventDefault(); openWa(`${ui().waHello} ${ui().waGeneral}`); });
   });
   $$(".js-insta").forEach(a => { a.href = CONFIG.instagram; });
-  document.addEventListener("click", e => {
-    const b = e.target.closest(".js-info");
-    if (!b) return;
-    const title = $("h3", b.closest(".event")).textContent;
-    openWa(`${ui().waHello} ${ui().waInfo(title)}`);
-  });
-  $$(".js-setbook").forEach(a => a.addEventListener("click", () => {
-    if (!form.elements.note.value.includes(ui().waSet)) {
-      form.elements.note.value = (ui().waSet + " " + form.elements.note.value).trim();
-    }
-  }));
 
   /* ============ Gün batımı & açık/kapalı durumu ============
      Gün batımı, Cunda'nın koordinatları için güneş konumu formülüyle hesaplanır (suncalc yöntemi). */
@@ -884,8 +824,6 @@
     const phase = mins >= -90 && mins <= 40 ? "golden" : (mins > 40 || istHour < 6) ? "night" : "day";
     document.documentElement.dataset.phase = phase;
 
-    const times = { sunset: set };
-    $$("[data-eve]").forEach(el => { el.textContent = hm(times[el.dataset.eve]); });
 
     const hour = Number(new Intl.DateTimeFormat("en-GB", { timeZone: TZ, hour: "2-digit", hourCycle: "h23" }).format(now));
     const open = CLOSE_H > OPEN_H ? (hour >= OPEN_H && hour < CLOSE_H) : (hour >= OPEN_H || hour < CLOSE_H);
@@ -895,38 +833,6 @@
   }
   updateLiveInfo();
   setInterval(updateLiveInfo, 60 * 1000);
-
-  /* ============ Kayan yazı şeritleri ============ */
-  function renderRibbons() {
-    $$("[data-ribbon]").forEach(r => {
-      const words = ui().ribbons[r.dataset.ribbon];
-      const run = words.map(w => `<span class="ribbon__item">${esc(w)}</span>`).join("");
-      r.innerHTML = `<div class="ribbon__track">${run}${run}</div>`; // iki kopya: kesintisiz döngü
-    });
-  }
-  renderRibbons();
-
-  /* ============ Süs ışıkları ============ */
-  const garland = $("#garland");
-  function buildGarland() {
-    if (!garland) return;
-    const narrow = garland.clientWidth < 700;
-    const swags = narrow ? 2 : 3, perSwag = narrow ? 7 : 11, sag = narrow ? 42 : 62, top = 8;
-    let path = "", bulbs = "", k = 0;
-    for (let i = 0; i < swags; i++) {
-      const x0 = (100 / swags) * i, x1 = (100 / swags) * (i + 1), xm = (x0 + x1) / 2;
-      path += `M${x0} ${top} Q${xm} ${top + 2 * sag} ${x1} ${top} `;
-      for (let j = 1; j < perSwag; j++) {
-        const tt = j / perSwag;
-        const x = x0 + (x1 - x0) * tt, y = top + 4 * sag * tt * (1 - tt);
-        bulbs += `<span class="bulb" style="left:${x.toFixed(2)}%;top:${(y + 1).toFixed(1)}px;--dl:${((k++ * 0.37) % 3.4).toFixed(2)}s"></span>`;
-      }
-    }
-    garland.innerHTML = `<svg viewBox="0 0 100 ${top + 2 * sag}" preserveAspectRatio="none" style="height:${top + 2 * sag}px"><path d="${path}"/></svg>${bulbs}`;
-  }
-  buildGarland();
-  let garlandTimer;
-  window.addEventListener("resize", () => { clearTimeout(garlandTimer); garlandTimer = setTimeout(buildGarland, 200); });
 
   /* ============ Yüzen rezervasyon butonu + derinlik efekti ============ */
   const floatBook = $("#floatBook");
@@ -961,6 +867,19 @@
   }
   window.addEventListener("scroll", onScrollFx, { passive: true });
   onScrollFx();
+
+  /* ============ Giriş: fareyle hafif derinlik ============ */
+  const hero = $(".hero");
+  if (hero && !reduceMotion) {
+    if (matchMedia("(pointer: fine)").matches) {
+      hero.addEventListener("pointermove", e => {
+        const r = hero.getBoundingClientRect();
+        hero.style.setProperty("--mx", ((e.clientX - r.left) / r.width - .5).toFixed(3));
+        hero.style.setProperty("--my", ((e.clientY - r.top) / r.height - .5).toFixed(3));
+      });
+      hero.addEventListener("pointerleave", () => { hero.style.setProperty("--mx", 0); hero.style.setProperty("--my", 0); });
+    }
+  }
 
   /* ============ Başlat ============ */
   $("#year").textContent = today.getFullYear();

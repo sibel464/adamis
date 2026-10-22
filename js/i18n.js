@@ -7,28 +7,28 @@ window.I18N = {
     "nav.story": "Our Story",
     "nav.menu": "Menu",
     "nav.gallery": "Gallery",
-    "nav.events": "Events",
     "nav.contact": "Contact",
     "cta.book": "Book a Table",
     "cta.menu": "See the Menu",
-    "cta.info": "Get Info",
 
-    "hero.eyebrow": "Cunda Island · Ayvalık",
-    "hero.title": "Home-cooked <em>olive oil</em> dishes in the heart of Cunda",
-    "hero.lead": "Olive oil dishes, home-style stews and Aegean greens, cooked fresh every morning. With the island's famous stuffed zucchini flowers.",
+    "hero.eyebrow": "In Cunda · Home cooking · Aegean flavour",
+    "hero.title": "Cunda,<br><em>at its finest;</em> on a plate.",
+    "hero.lead": "Dishes made at home, with local ingredients — we bring Cunda's calm to your table.",
+    "cta.explore": "Explore Our Menu",
 
     "story.eyebrow": "Our Story",
-    "story.title": "A mother's kitchen, <em>with the island's olive oil</em>",
-    "story.p1": "Adamis is a small eatery on Cunda's Halk Caddesi, keeping the island's home cooking alive. Pots go on the stove early in the morning; olive oil dishes are left to cool and stews to simmer.",
-    "story.p2": "Stuffed zucchini flowers, vine leaves, seasonal Aegean greens, white bean stew and İzmir köfte… made with Ayvalık olive oil, just as they are at home. Come and taste the island over a warm plate.",
+    "story.title": "In the heart of the island, a home-cooking <em>story…</em>",
+    "story.p1": "In a quiet corner of Cunda's stone streets, close to the sea, Adamis welcomes guests with home dishes made from traditional recipes.",
+    "story.p2": "Every plate carries the Aegean's simplicity, every flavour Cunda's soul. Olive oil dishes are cooked in the morning; pots come off the stove all day.",
     "story.sign": "— The Adamis kitchen",
+    "story.note1": "Cunda Island",
+    "story.note2": "Same flavour,<br>same calm",
+    "story.cta": "For a reservation",
     "story.badge": "olive oil",
-    "feat.1.t": "Fresh every morning",
-    "feat.1.d": "Dishes come off the stove through the day",
-    "feat.2.t": "Stuffed zucchini flowers",
-    "feat.2.d": "Cunda's favourite, filled by hand",
-    "feat.3.t": "Ayvalık olive oil",
-    "feat.3.d": "From olive oil dishes to greens, on every plate",
+    "feat.1.t": "Natural, fresh ingredients",
+    "feat.2.t": "A warm, friendly atmosphere",
+    "feat.3.t": "Cunda's unique setting",
+    "feat.4.t": "Homemade flavours",
 
     "today.title": "On the stove today",
     "today.more": "Full menu →",
@@ -43,21 +43,6 @@ window.I18N = {
     "info.call": "Phone",
     "info.callcta": "Call now →",
 
-    "eve.eyebrow": "A day at Adamis",
-    "eve.title": "On the stove by morning, <em>on the table</em> by noon",
-    "eve.lead": "Sunset time is calculated daily for Cunda.",
-    "eve.1.time": "Morning",
-    "eve.1.t": "The stoves are lit",
-    "eve.1.d": "Pots go on the stove; olive oil dishes are left to cool.",
-    "eve.2.time": "Noon",
-    "eve.2.t": "The table is set",
-    "eve.2.d": "The counter fills up: stuffed zucchini flowers, sarma, white beans and pilaf.",
-    "eve.3.t": "Sunset",
-    "eve.3.d": "Dinner: the day's stews and Aegean greens.",
-    "eve.4.time": "Evening",
-    "eve.4.t": "Dessert and coffee",
-    "eve.4.d": "Curd cheese dessert, baked rice pudding and frothy Turkish coffee.",
-
     "menu.eyebrow": "Our Kitchen",
     "menu.title": "Menu",
     "menu.lead": "Olive oil dishes, Aegean greens, soups and home-style stews. Dishes change with the season and the day.",
@@ -71,9 +56,6 @@ window.I18N = {
     "gallery.title": "Moments at <em>Adamis</em>",
     "gallery.more": "More on Instagram",
 
-    "events.eyebrow": "Events",
-    "events.title": "Takeaway &amp; <em>group</em> meals",
-    "events.lead": "Take our home cooking home, or leave your big table to us.",
 
     "rev.eyebrow": "Our Guests",
     "rev.title": "What <em>they say</em>",
@@ -154,14 +136,9 @@ window.I18N = {
       waSet: "Adamis Ev Sofrası için yer ayırtmak istiyorum.",
       sunToday: "Bugün gün batımı",
       sunTomorrow: "Yarın gün batımı",
-      ribbons: {
-        a: ["Kabak çiçeği dolması", "Yaprak sarma", "Ege otları", "Tencere yemekleri", "Ayvalık zeytinyağı"],
-        b: ["Her sabah taze", "Kuru fasulye & pilav", "İzmir köfte", "Ev tatlıları", "Paket servis", "Kalimera Cunda"]
-      },
       openNow: "Şu an açık",
       closedNow: h => `Şu an kapalı · açılış ${h}`,
       soldOut: "Bugün yok",
-      info: "Bilgi Al"
     },
     en: {
       noResults: "Nothing matches your search. Try another word.",
@@ -195,14 +172,9 @@ window.I18N = {
       waSet: "I would like to book a table for the Adamis Home Table menu.",
       sunToday: "Sunset today",
       sunTomorrow: "Sunset tomorrow",
-      ribbons: {
-        a: ["Stuffed zucchini flowers", "Vine leaf sarma", "Aegean greens", "Home-style stews", "Ayvalık olive oil"],
-        b: ["Fresh every morning", "White beans & pilaf", "İzmir köfte", "Homemade desserts", "Takeaway", "Kalimera Cunda"]
-      },
       openNow: "Open now",
       closedNow: h => `Closed now · opens at ${h}`,
       soldOut: "Not available today",
-      info: "Get Info"
     }
   }
 };

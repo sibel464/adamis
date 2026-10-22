@@ -15,20 +15,19 @@
   // Metinler sekmesinde düzenlenebilen alanlar (anahtarlar index.html'deki data-i18n değerleridir)
   const TEXT_GROUPS = [
     ["Giriş", [["hero.eyebrow", "Üst satır"], ["hero.title", "Başlık", 1], ["hero.lead", "Alt metin", 2]]],
-    ["Hikâyemiz", [["story.title", "Başlık", 1], ["story.p1", "1. paragraf", 2], ["story.p2", "2. paragraf", 2], ["story.sign", "İmza"], ["story.badge", "Rozet (1890 altı)"],
-      ["feat.1.t", "Öne çıkan 1 – başlık"], ["feat.1.d", "Öne çıkan 1 – metin"], ["feat.2.t", "Öne çıkan 2 – başlık"], ["feat.2.d", "Öne çıkan 2 – metin"],
-      ["feat.3.t", "Öne çıkan 3 – başlık"], ["feat.3.d", "Öne çıkan 3 – metin"]]],
-    ["Bir Adamis günü", [["eve.title", "Başlık", 1], ["eve.lead", "Alt metin"], ["eve.1.time", "1. adım zamanı"], ["eve.1.t", "1. adım"], ["eve.1.d", "1. adım metni"], ["eve.2.time", "2. adım zamanı"], ["eve.2.t", "2. adım"], ["eve.2.d", "2. adım metni"],
-      ["eve.3.t", "3. adım"], ["eve.3.d", "3. adım metni"], ["eve.4.time", "4. adım zamanı"], ["eve.4.t", "4. adım"], ["eve.4.d", "4. adım metni"]]],
+    ["Hikâyemiz", [["story.title", "Başlık", 1], ["story.p1", "1. paragraf", 2], ["story.p2", "2. paragraf", 2], ["story.sign", "İmza"],
+      ["story.note1", "El yazısı not (fotoğrafların altı)"], ["story.note2", "El yazısı not (sağdaki fotoğraf)"],
+      ["feat.1.t", "Özellik 1"], ["feat.2.t", "Özellik 2"], ["feat.3.t", "Özellik 3"], ["feat.4.t", "Özellik 4"]]],
     ["Menü", [["menu.title", "Başlık"], ["menu.lead", "Alt metin", 2], ["menu.allergen", "Alerjen notu"]]],
-    ["Etkinlikler", [["events.title", "Başlık", 1], ["events.lead", "Alt metin"]]],
     ["Rezervasyon", [["res.title", "Başlık", 1], ["res.p", "Metin", 2]]],
     ["İletişim & Footer", [["c.title", "İletişim başlığı", 1], ["foot.slogan", "Footer sloganı"]]]
   ];
   const IMAGE_SLOTS = [
-    ["hero", "Giriş (tabak) fotoğrafı", "Kare, yemeğin üstten çekimi olursa en iyisi; en az 1000 px"],
-    ["story", "Hikâye – kemerli fotoğraf", "Taş ev / mekân; yatay veya dikey"],
-    ["storyInset", "Hikâye – küçük yuvarlak", "Kare olursa en iyisi"]
+    ["hero", "Giriş – arka plan fotoğrafı", "Geniş, yatay, açık tonlu; en az 1920 px"],
+    ["dish", "Giriş – tabaktaki yemek", "Kare, yemeğin üstten çekimi olursa en iyisi"],
+    ["story", "Hikâye – büyük polaroid", "Yatay"],
+    ["story2", "Hikâye – küçük polaroid", "Yatay veya dikey"],
+    ["storyInset", "Hikâye – sağdaki fotoğraf", "Yatay"]
   ];
 
   const S = {
@@ -226,11 +225,11 @@
   /* ---------- sekmeler ---------- */
   const TABS = [
     ["genel", "🏠", "Genel bilgiler"], ["gorseller", "🖼️", "Ana fotoğraflar"], ["metinler", "✍️", "Metinler"],
-    ["menu", "🍽️", "Menü"], ["fiks", "🍲", "Fiks menü"], ["galeri", "📸", "Galeri"],
-    ["etkinlik", "🎶", "Etkinlikler"], ["yorum", "⭐", "Yorumlar"], ["ayarlar", "📣", "Duyuru & bölümler"]
+    ["menu", "🍽️", "Menü"], ["galeri", "📸", "Galeri"],
+    ["yorum", "⭐", "Yorumlar"], ["ayarlar", "📣", "Duyuru & bölümler"]
   ];
   // Sitede gizlenebilen bölümler (index.html'deki id'ler)
-  const SECTIONS = [["hikaye", "Hikâyemiz"], ["aksam", "Bir Adamis günü (etkinlikler dahil)"], ["etkinlikler", "Etkinlikler"],
+  const SECTIONS = [["hikaye", "Hikâyemiz"],
     ["galeri", "Galeri"], ["yorumlar", "Yorumlar"]];
 
   function tabGenel() {
@@ -460,25 +459,6 @@
     return [search, chips, catCard, card(`Ürünler (${cat.items.length})`, list, add), sectionsCard()];
   }
 
-  function tabFiks() {
-    const sm = S.menu.setMenu = S.menu.setMenu || { title: { tr: "", en: "" }, desc: { tr: "", en: "" }, items: [], price: 0, per: { tr: "kişi başı", en: "per person" } };
-    const W = "menu";
-    return [card("Fiks menü (Adamis Ev Sofrası)",
-      checkbox("Fiks menüyü sitede gizle", () => sm.hidden, v => { if (v) sm.hidden = true; else delete sm.hidden; }, W),
-      biField("Başlık", sm, "title", { which: W }),
-      biField("Açıklama", sm, "desc", { which: W, area: 1 }),
-      h("div", { class: "grid2" },
-        field("Fiyat (₺)", () => sm.price, v => sm.price = v, { type: "number", which: W }),
-        biField("Fiyat notu", sm, "per", { which: W })),
-      h("div", { class: "f" }, h("span", { class: "f__l" }, "Menüde neler var?"),
-        h("div", { class: "stack" }, ...sm.items.map((x, i) => {
-          const holder = { v: x };
-          const row = h("div", { class: "prow" }, biField(`${i + 1}.`, holder, "v", { which: W }), rowTools(sm.items, i, render, W));
-          row.addEventListener("input", () => { sm.items[i] = holder.v; });
-          return row;
-        }))),
-      h("button", { type: "button", class: "btn btn--add", onclick: () => { sm.items.push({ tr: "", en: "" }); markDirty(W); render(); } }, "+ Satır ekle"))];
-  }
 
   function tabGaleri() {
     const G = S.site.gallery = S.site.gallery || [];
@@ -504,19 +484,6 @@
       grid)];
   }
 
-  function tabEtkinlik() {
-    const E = S.site.events = S.site.events || [];
-    return [card(`Etkinlikler (${E.length})`,
-      h("div", { class: "stack" }, ...E.map((ev, i) => h("article", { class: "ecard" },
-        h("div", { class: "item__grid" },
-          imageField("Fotoğraf", () => ev.image, v => { ev.image = v; }, { maxW: 1200, folder: "img/events" }),
-          h("div", {},
-            biField("Zaman / kapsam", ev, "when", { hint: "Örn. Cuma & Cumartesi · 21:00" }),
-            biField("Başlık", ev, "title"),
-            biField("Açıklama", ev, "desc", { area: 1 }))),
-        rowTools(E, i, render, "site", { del: "Bu etkinlik silinsin mi?" })))),
-      h("button", { type: "button", class: "btn btn--add", onclick: () => { E.push({ image: "", when: { tr: "", en: "" }, title: { tr: "", en: "" }, desc: { tr: "", en: "" } }); markDirty("site"); render(); } }, "+ Etkinlik ekle"))];
-  }
 
   function tabYorum() {
     const R = S.site.reviews = S.site.reviews || [];
@@ -550,7 +517,7 @@
         h("p", { class: "muted" }, "Açılış sayfasında başlığın üstünde turuncu bir şerit olarak görünür. Ör. “Bu Cuma canlı müzik!” veya “Bugün özel etkinlik nedeniyle 18:00'de kapalıyız”."),
         checkbox("Duyuruyu göster", () => an.on, v => { an.on = v; }),
         biField("Duyuru metni", an, "text"),
-        field("Bağlantı (isteğe bağlı)", () => an.link, v => an.link = v.trim(), { placeholder: "#etkinlikler, #menu veya https://…", hint: "Şeride tıklayınca gidilecek yer. Boş bırakılabilir." })),
+        field("Bağlantı (isteğe bağlı)", () => an.link, v => an.link = v.trim(), { placeholder: "#menu, #rezervasyon veya https://…", hint: "Şeride tıklayınca gidilecek yer. Boş bırakılabilir." })),
       card("Sitede görünen bölümler",
         h("p", { class: "muted" }, "İşareti kaldırdığınız bölüm sitede gizlenir, menüdeki bağlantısı da kalkar. Silinmez; istediğiniz zaman geri açabilirsiniz."),
         ...SECTIONS.map(([id, label]) => checkbox(label, () => !hidden.includes(id), v => {
@@ -561,7 +528,7 @@
     ];
   }
 
-  const TAB_RENDER = { ayarlar: tabAyarlar, genel: tabGenel, gorseller: tabGorseller, metinler: tabMetinler, menu: tabMenu, fiks: tabFiks, galeri: tabGaleri, etkinlik: tabEtkinlik, yorum: tabYorum };
+  const TAB_RENDER = { ayarlar: tabAyarlar, genel: tabGenel, gorseller: tabGorseller, metinler: tabMetinler, menu: tabMenu, galeri: tabGaleri, yorum: tabYorum };
 
   /* ---------- ekranlar ---------- */
   function renderLogin(msg) {
@@ -586,7 +553,7 @@
     $("#app").replaceChildren(h("div", { class: "login" },
       h("form", { class: "login__box", onsubmit: go },
         h("div", { class: "brand" }, h("span", { class: "brand__mark" }), h("span", {}, "Adamis ", h("em", {}, "Yönetim"))),
-        h("p", { class: "muted" }, "Menü, galeri, etkinlikler, yorumlar ve site bilgilerini buradan düzenleyebilirsiniz."),
+        h("p", { class: "muted" }, "Menü, galeri, yorumlar ve site bilgilerini buradan düzenleyebilirsiniz."),
         h("label", { class: "f" }, h("span", { class: "f__l" }, "GitHub erişim anahtarı"), tok),
         h("details", { class: "help" }, h("summary", {}, "Anahtarı nasıl alırım? (bir kez yapılır)"),
           h("ol", {},

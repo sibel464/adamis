@@ -1,8 +1,8 @@
 /* Cunda Adamis — yönetim paneli */
 :root {
-  --navy: #26402d; --navy-2: #1b2e21; --sea: #5b8a5f; --stone: #f2eee0; --cream: #fbf9f1;
-  --sunset: #e0703a; --sunset-2: #c95d29; --olive: #7a8a3a; --ink: #1f2b22; --muted: #5c6a5e;
-  --line: rgba(38, 64, 45, .12); --danger: #b3261e;
+  --navy: #1f3d2b; --navy-2: #142a1d; --sea: #3f7a52; --stone: #eaf0e1; --cream: #f7f9f2;
+  --sunset: #b5832a; --sunset-2: #94691c; --olive: #6f8a2e; --ink: #1c2a20; --muted: #5a6b5e;
+  --line: rgba(31, 61, 43, .12); --danger: #b3261e;
   --serif: "Fraunces", Georgia, serif; --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -47,7 +47,7 @@ code { background: var(--stone); padding: 1px 6px; border-radius: 6px; font-size
 .brand__mark::after { content: ""; position: absolute; left: 6px; right: 6px; bottom: 9px; height: 8px; border: 2.5px solid var(--sunset); border-bottom: 0; border-radius: 10px 10px 0 0; }
 
 /* Giriş */
-.login { min-height: 100vh; display: grid; place-items: center; padding: 20px; background: radial-gradient(circle at 80% 0%, rgba(224, 112, 58, .25), transparent 40%), var(--navy); }
+.login { min-height: 100vh; display: grid; place-items: center; padding: 20px; background: radial-gradient(circle at 80% 0%, rgba(181, 131, 42, .25), transparent 40%), var(--navy); }
 .login__box { width: min(440px, 100%); background: var(--cream); border-radius: 22px; padding: 28px; box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .6); display: grid; gap: 12px; }
 .login__box .brand { font-size: 1.6rem; color: var(--navy); }
 .login__err { color: var(--danger); font-size: .88rem; min-height: 1.2em; margin: 0; }
@@ -69,7 +69,7 @@ code { background: var(--stone); padding: 1px 6px; border-radius: 6px; font-size
 .main__t { font-family: var(--serif); font-weight: 400; font-size: 1.9rem; color: var(--navy); margin: 4px 0 16px; }
 
 /* Kartlar ve alanlar */
-.card { background: #fff; border-radius: 18px; padding: 20px; margin-bottom: 16px; border: 1px solid var(--line); box-shadow: 0 10px 24px -20px rgba(38, 64, 45, .5); }
+.card { background: #fff; border-radius: 18px; padding: 20px; margin-bottom: 16px; border: 1px solid var(--line); box-shadow: 0 10px 24px -20px rgba(31, 61, 43, .5); }
 .card__t { font-family: var(--serif); font-weight: 600; font-size: 1.2rem; color: var(--navy); margin: 0 0 14px; }
 .f { display: grid; gap: 6px; margin-bottom: 14px; min-width: 0; }
 .f__l { font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
@@ -79,12 +79,12 @@ input[type="text"], input[type="number"], input[type="time"], input[type="passwo
   transition: border-color .2s, box-shadow .2s;
 }
 textarea { resize: vertical; line-height: 1.45; }
-input:focus, select:focus, textarea:focus { outline: none; border-color: var(--sunset); box-shadow: 0 0 0 3px rgba(224, 112, 58, .15); }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--sunset); box-shadow: 0 0 0 3px rgba(181, 131, 42, .15); }
 .bi { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .bi__col { position: relative; }
 .bi__col input, .bi__col textarea { padding-left: 44px; }
 .lang { position: absolute; left: 8px; top: 9px; font-size: .64rem; font-weight: 700; letter-spacing: .06em; padding: 3px 6px; border-radius: 6px; background: var(--stone); color: var(--navy); }
-.lang--en { background: #e7efe2; color: var(--sea); }
+.lang--en { background: #e3eedf; color: var(--sea); }
 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
 .grid3 { display: grid; grid-template-columns: 1fr 1fr 160px; gap: 0 14px; }
 .check { display: flex; align-items: center; gap: 8px; font-size: .92rem; cursor: pointer; }
@@ -122,7 +122,7 @@ input[type="search"].msearch { width: 100%; padding: 12px 16px; border-radius: 9
 .item__grid { display: grid; grid-template-columns: 240px 1fr; gap: 16px; }
 .items { display: grid; gap: 8px; }
 .irow { border: 1px solid var(--line); border-radius: 14px; background: #fff; overflow: hidden; }
-.irow.is-open { border-color: rgba(224, 112, 58, .5); box-shadow: 0 10px 24px -18px rgba(224, 112, 58, .7); }
+.irow.is-open { border-color: rgba(181, 131, 42, .5); box-shadow: 0 10px 24px -18px rgba(181, 131, 42, .7); }
 .irow__head { display: flex; align-items: center; gap: 8px; padding: 6px 8px 6px 6px; }
 .irow__head .tools { margin: 0; }
 .irow__main { flex: 1; display: flex; align-items: center; gap: 12px; border: 0; background: transparent; text-align: left; cursor: pointer; padding: 4px; min-width: 0; }
@@ -153,7 +153,7 @@ input[type="search"].msearch { width: 100%; padding: 12px 16px; border-radius: 9
 /* Kaydet çubuğu */
 .savebar {
   position: fixed; left: 50%; bottom: 18px; z-index: 30; display: flex; align-items: center; gap: 10px;
-  padding: 8px 8px 8px 20px; border-radius: 999px; background: var(--navy); color: #fff; box-shadow: 0 20px 40px -14px rgba(16, 28, 20, .6);
+  padding: 8px 8px 8px 20px; border-radius: 999px; background: var(--navy); color: #fff; box-shadow: 0 20px 40px -14px rgba(12, 24, 16, .6);
   transform: translate(-50%, 140%); transition: transform .4s cubic-bezier(.2, .7, .2, 1); max-width: calc(100% - 24px);
 }
 .savebar.is-on { transform: translate(-50%, 0); }
