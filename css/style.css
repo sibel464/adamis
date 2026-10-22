@@ -1,5 +1,5 @@
 /* =========================================================
-   Kardias Cunda — stil dosyası
+   Cunda Adamis — stil dosyası
    ========================================================= */
 :root {
   --navy: #123447;
@@ -265,7 +265,7 @@ h1 em, h2 em, h3 em { font-style: italic; color: var(--sunset); font-weight: 400
 .pillars strong { display: block; font-family: var(--serif); font-weight: 600; font-size: 1.12rem; color: var(--navy); line-height: 1.2; }
 .pillars small { color: var(--muted); font-size: .92rem; }
 
-/* ---------- Bir Kardias akşamı ---------- */
+/* ---------- Bir Adamis günü ---------- */
 .evening { overflow: hidden; }
 .evening::selection { background: var(--sunset); }
 .timeline { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; }
@@ -581,16 +581,6 @@ body.drawer-open { overflow: hidden; }
 .event p { font-size: .94rem; color: #b8c7cf; flex: 1; }
 .event .btn { align-self: flex-start; }
 
-/* ---------- Stay ---------- */
-.stay { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 90px); align-items: center; }
-.stay__media { position: relative; padding: 0 0 60px 0; }
-.stay__img { border-radius: var(--radius); object-fit: cover; box-shadow: var(--shadow); }
-.stay__img--main { width: 88%; aspect-ratio: 4 / 3; height: auto; }
-.stay__img--small { position: absolute; right: 0; bottom: 0; width: 44%; aspect-ratio: 1; height: auto; border: 8px solid var(--cream); border-radius: 999px 999px 18px 18px; }
-.stay__text p { color: #3f4c53; }
-.stay__list { list-style: none; padding: 0; margin: 0 0 28px; display: grid; gap: 10px; }
-.stay__list li { display: flex; gap: 12px; align-items: flex-start; }
-.stay__list li::before { content: "✓"; flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--sea-soft); color: var(--sea); display: grid; place-items: center; font-size: .8rem; font-weight: 700; margin-top: 2px; }
 
 /* ---------- Reviews ---------- */
 .rating { display: grid; grid-template-columns: auto auto; column-gap: 14px; align-items: center; }
@@ -876,7 +866,7 @@ body.sheet-open { overflow: hidden; }
 }
 @media (max-width: 860px) {
   body { font-size: 16px; }
-  .story, .stay, .reserve, .contact { grid-template-columns: 1fr; }
+  .story, .reserve, .contact { grid-template-columns: 1fr; }
   .story__media { max-width: 460px; margin-inline: auto; width: 100%; }
   .story__badge { right: 0; }
   .cat-grid, .cat-grid--3 { grid-template-columns: repeat(2, 1fr); }
@@ -886,7 +876,6 @@ body.sheet-open { overflow: hidden; }
   .setmenu__price { border-left: 0; border-top: 1px solid rgba(255, 255, 255, .1); }
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .footer__brand { grid-column: 1 / -1; }
-  .stay__media { order: 2; }
   .hero__content { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 640px) {

@@ -1,13 +1,13 @@
-/* Kardias Cunda — yönetim paneli
+/* Cunda Adamis — yönetim paneli
    İçerik data/menu.json ve data/site.json dosyalarındadır. Panel bu dosyaları GitHub API ile okur ve
    "Kaydet ve yayınla"da tek bir commit olarak geri yazar; GitHub Pages siteyi 1–2 dakikada günceller.
    Giriş: yalnızca bu depoya "Contents: Read and write" izni olan bir GitHub erişim anahtarı (fine-grained token). */
 (() => {
   "use strict";
 
-  const DEFAULT_REPO = "sibel464/kardias-cunda";
+  const DEFAULT_REPO = "sibel464/adamis";
   const BRANCH = "main";
-  const KEY_TOKEN = "kardias-admin-token", KEY_REPO = "kardias-admin-repo";
+  const KEY_TOKEN = "adamis-ev-admin-token", KEY_REPO = "adamis-ev-admin-repo";
 
   const TAGS = { favori: "Favori", vejetaryen: "Vejetaryen", vegan: "Vegan", acili: "Acılı", glutensiz: "Glutensiz", sef: "Şefin Önerisi" };
   const SHAPES = [["4:3", "Yatay"], ["3:2", "Geniş"], ["1:1", "Kare"], ["4:5", "Dikey"], ["3:4", "Uzun dikey"]];
@@ -18,20 +18,17 @@
     ["Hikâyemiz", [["story.title", "Başlık", 1], ["story.p1", "1. paragraf", 2], ["story.p2", "2. paragraf", 2], ["story.sign", "İmza"], ["story.badge", "Rozet (1890 altı)"],
       ["feat.1.t", "Öne çıkan 1 – başlık"], ["feat.1.d", "Öne çıkan 1 – metin"], ["feat.2.t", "Öne çıkan 2 – başlık"], ["feat.2.d", "Öne çıkan 2 – metin"],
       ["feat.3.t", "Öne çıkan 3 – başlık"], ["feat.3.d", "Öne çıkan 3 – metin"]]],
-    ["Bir Kardias akşamı", [["eve.title", "Başlık", 1], ["eve.lead", "Alt metin"], ["eve.1.t", "1. adım"], ["eve.1.d", "1. adım metni"], ["eve.2.t", "2. adım"], ["eve.2.d", "2. adım metni"],
-      ["eve.3.t", "3. adım"], ["eve.3.d", "3. adım metni"], ["eve.4.t", "4. adım"], ["eve.4.d", "4. adım metni"]]],
+    ["Bir Adamis günü", [["eve.title", "Başlık", 1], ["eve.lead", "Alt metin"], ["eve.1.time", "1. adım zamanı"], ["eve.1.t", "1. adım"], ["eve.1.d", "1. adım metni"], ["eve.2.time", "2. adım zamanı"], ["eve.2.t", "2. adım"], ["eve.2.d", "2. adım metni"],
+      ["eve.3.t", "3. adım"], ["eve.3.d", "3. adım metni"], ["eve.4.time", "4. adım zamanı"], ["eve.4.t", "4. adım"], ["eve.4.d", "4. adım metni"]]],
     ["Menü", [["menu.title", "Başlık"], ["menu.lead", "Alt metin", 2], ["menu.allergen", "Alerjen notu"]]],
     ["Etkinlikler", [["events.title", "Başlık", 1], ["events.lead", "Alt metin"]]],
-    ["Konaklama", [["stay.title", "Başlık", 1], ["stay.p", "Metin", 2], ["stay.l1", "Madde 1"], ["stay.l2", "Madde 2"], ["stay.l3", "Madde 3"], ["stay.l4", "Madde 4"]]],
     ["Rezervasyon", [["res.title", "Başlık", 1], ["res.p", "Metin", 2]]],
     ["İletişim & Footer", [["c.title", "İletişim başlığı", 1], ["foot.slogan", "Footer sloganı"]]]
   ];
   const IMAGE_SLOTS = [
     ["hero", "Giriş (ana) fotoğrafı", "Geniş, yatay; en az 1920 px"],
     ["story", "Hikâye – kemerli fotoğraf", "Taş ev / mekân; yatay veya dikey"],
-    ["storyInset", "Hikâye – küçük yuvarlak", "Kare olursa en iyisi"],
-    ["stay", "Konaklama – ana fotoğraf", "Oda fotoğrafı, yatay"],
-    ["staySmall", "Konaklama – küçük kemer", "Kare veya dikey"]
+    ["storyInset", "Hikâye – küçük yuvarlak", "Kare olursa en iyisi"]
   ];
 
   const S = {
@@ -229,12 +226,12 @@
   /* ---------- sekmeler ---------- */
   const TABS = [
     ["genel", "🏠", "Genel bilgiler"], ["gorseller", "🖼️", "Ana fotoğraflar"], ["metinler", "✍️", "Metinler"],
-    ["menu", "🍽️", "Menü"], ["fiks", "🌅", "Fiks menü"], ["galeri", "📸", "Galeri"],
+    ["menu", "🍽️", "Menü"], ["fiks", "🍲", "Fiks menü"], ["galeri", "📸", "Galeri"],
     ["etkinlik", "🎶", "Etkinlikler"], ["yorum", "⭐", "Yorumlar"], ["ayarlar", "📣", "Duyuru & bölümler"]
   ];
   // Sitede gizlenebilen bölümler (index.html'deki id'ler)
-  const SECTIONS = [["hikaye", "Hikâyemiz"], ["aksam", "Bir Kardias akşamı (etkinlikler dahil)"], ["etkinlikler", "Etkinlikler"],
-    ["galeri", "Galeri"], ["konaklama", "Konaklama"], ["yorumlar", "Yorumlar"]];
+  const SECTIONS = [["hikaye", "Hikâyemiz"], ["aksam", "Bir Adamis günü (etkinlikler dahil)"], ["etkinlikler", "Etkinlikler"],
+    ["galeri", "Galeri"], ["yorumlar", "Yorumlar"]];
 
   function tabGenel() {
     const c = S.site.contact, hr = S.site.hours;
@@ -265,7 +262,7 @@
   function tabMetinler() {
     const texts = S.site.texts = S.site.texts || {};
     const intro = card(null, h("p", { class: "muted" },
-      "Sitedeki yazıları buradan değiştirebilirsiniz. Turuncu italik vurgu için kelimeyi yıldız içine alın: ", h("code", {}, "*gün batımı*"), ". Boş bırakılan alan sitedeki varsayılan metne döner."));
+      "Sitedeki yazıları buradan değiştirebilirsiniz. Turuncu italik vurgu için kelimeyi yıldız içine alın: ", h("code", {}, "*zeytinyağlı*"), ". Boş bırakılan alan sitedeki varsayılan metne döner."));
     const groups = TEXT_GROUPS.map(([title, keys]) => card(title, ...keys.map(([key, label, area]) => {
       const proxy = { v: { tr: texts[key]?.tr ?? S.defaults.tr[key] ?? "", en: texts[key]?.en ?? S.defaults.en[key] ?? "" } };
       const el = biField(label, proxy, "v", { area: area || 0, transform: emTransform });
@@ -466,7 +463,7 @@
   function tabFiks() {
     const sm = S.menu.setMenu = S.menu.setMenu || { title: { tr: "", en: "" }, desc: { tr: "", en: "" }, items: [], price: 0, per: { tr: "kişi başı", en: "per person" } };
     const W = "menu";
-    return [card("Fiks Gün Batımı Menüsü",
+    return [card("Fiks menü (Adamis Ev Sofrası)",
       checkbox("Fiks menüyü sitede gizle", () => sm.hidden, v => { if (v) sm.hidden = true; else delete sm.hidden; }, W),
       biField("Başlık", sm, "title", { which: W }),
       biField("Açıklama", sm, "desc", { which: W, area: 1 }),
@@ -588,13 +585,13 @@
     };
     $("#app").replaceChildren(h("div", { class: "login" },
       h("form", { class: "login__box", onsubmit: go },
-        h("div", { class: "brand" }, h("span", { class: "brand__mark" }), h("span", {}, "Kardias ", h("em", {}, "Yönetim"))),
+        h("div", { class: "brand" }, h("span", { class: "brand__mark" }), h("span", {}, "Adamis ", h("em", {}, "Yönetim"))),
         h("p", { class: "muted" }, "Menü, galeri, etkinlikler, yorumlar ve site bilgilerini buradan düzenleyebilirsiniz."),
         h("label", { class: "f" }, h("span", { class: "f__l" }, "GitHub erişim anahtarı"), tok),
         h("details", { class: "help" }, h("summary", {}, "Anahtarı nasıl alırım? (bir kez yapılır)"),
           h("ol", {},
             h("li", {}, "GitHub'a girin ve ", h("a", { href: "https://github.com/settings/personal-access-tokens/new", target: "_blank", rel: "noopener" }, "yeni anahtar sayfasını"), " açın."),
-            h("li", {}, "Ad: “Kardias yönetim”. Süre: istediğiniz kadar (ör. 1 yıl)."),
+            h("li", {}, "Ad: “Adamis yönetim”. Süre: istediğiniz kadar (ör. 1 yıl)."),
             h("li", {}, "Repository access → ", h("b", {}, "Only select repositories"), " → ", h("b", {}, S.repo.split("/")[1]), " deposunu seçin."),
             h("li", {}, "Permissions → Repository permissions → ", h("b", {}, "Contents: Read and write"), "."),
             h("li", {}, "“Generate token”a basın, çıkan anahtarı kopyalayıp buraya yapıştırın.")),
@@ -625,7 +622,7 @@
   function renderApp() {
     $("#app").replaceChildren(
       h("header", { class: "top" },
-        h("div", { class: "brand" }, h("span", { class: "brand__mark" }), h("span", {}, "Kardias ", h("em", {}, "Yönetim"))),
+        h("div", { class: "brand" }, h("span", { class: "brand__mark" }), h("span", {}, "Adamis ", h("em", {}, "Yönetim"))),
         h("div", { class: "top__r" },
           h("a", { class: "btn btn--ghost-l btn--sm", href: "./", target: "_blank", rel: "noopener" }, "Siteyi aç ↗"),
           h("button", { type: "button", class: "btn btn--ghost-l btn--sm", onclick: logout }, "Çıkış"))),

@@ -1,4 +1,4 @@
-/* Kardias Cunda — site davranışları */
+/* Cunda Adamis — site davranışları */
 (async () => {
   "use strict";
 
@@ -6,8 +6,8 @@
      Telefon, saatler, galeri, etkinlikler, yorumlar ve metin düzeltmeleri data/site.json'dadır
      (yönetim paneli: admin.html). Dosya okunamazsa aşağıdaki temel ayarlarla çalışır. */
   const FALLBACK = {
-    contact: { phone: "+902663271965", phoneDisplay: "0266 327 19 65", whatsapp: "902663271965", instagram: "", address: "", mapsQuery: "" },
-    hours: { open: "14:00", close: "00:00" }, images: {}, rating: null, texts: {}, gallery: [], events: null, reviews: []
+    contact: { phone: "+902663271064", phoneDisplay: "0266 327 10 64", whatsapp: "905070554938", instagram: "", address: "", mapsQuery: "" },
+    hours: { open: "09:00", close: "22:30" }, images: {}, rating: null, texts: {}, gallery: [], events: null, reviews: []
   };
   let SITE = FALLBACK;
   try {
@@ -46,7 +46,7 @@
     .replace(/[çğıöşüâîû]/g, c => ({ ç: "c", ğ: "g", ı: "i", ö: "o", ş: "s", ü: "u", â: "a", î: "i", û: "u" }[c]));
 
   let saved = null;
-  try { saved = localStorage.getItem("kardias-lang"); } catch (e) { /* storage yok */ }
+  try { saved = localStorage.getItem("adamis-ev-lang"); } catch (e) { /* storage yok */ }
   // Kayıtlı tercih yoksa: Türkçe tarayıcıya TR, diğerlerine EN
   let lang = saved || ((navigator.language || "tr").toLowerCase().startsWith("tr") ? "tr" : "en");
   const ui = () => window.I18N.ui[lang];
@@ -77,7 +77,7 @@
       el.placeholder = lang === "en" && dict[key] ? dict[key] : el.dataset.trPlaceholder;
     });
     $$(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
-    try { localStorage.setItem("kardias-lang", lang); } catch (e) { /* storage yok */ }
+    try { localStorage.setItem("adamis-ev-lang", lang); } catch (e) { /* storage yok */ }
   }
 
   $$(".lang button").forEach(b => b.addEventListener("click", () => {
@@ -390,7 +390,7 @@
     drawerContent.innerHTML = `
       <header class="dhead">
         <div class="dhead__bar">
-          <span class="dhead__brand">Kardias · ${esc(ui().menuWord)}</span>
+          <span class="dhead__brand">Adamis · ${esc(ui().menuWord)}</span>
           <button type="button" class="dhead__close" data-drawer-close aria-label="${esc(ui().close)}">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </button>
@@ -808,8 +808,7 @@
       `• ${u.waPhone}: ${f.phone.value.trim()}`,
       `• ${u.waDate}: ${date}`,
       `• ${u.waTime}: ${f.time.value}`,
-      `• ${u.waGuests}: ${u.guests(f.guests.value)}`,
-      `• ${u.waTerrace}: ${f.terrace.value === "yes" ? u.waYes : u.waNo}`
+      `• ${u.waGuests}: ${u.guests(f.guests.value)}`
     ];
     if (f.note.value.trim()) lines.push(`• ${u.waNote}: ${f.note.value.trim()}`);
     openWa(lines.join("\n"));
@@ -828,9 +827,7 @@
     const title = $("h3", b.closest(".event")).textContent;
     openWa(`${ui().waHello} ${ui().waInfo(title)}`);
   });
-  $$(".js-room").forEach(a => a.addEventListener("click", e => { e.preventDefault(); openWa(`${ui().waHello} ${ui().waRoom}`); }));
-  $$(".js-terrace").forEach(a => a.addEventListener("click", () => {
-    form.elements.terrace.value = "yes";
+  $$(".js-setbook").forEach(a => a.addEventListener("click", () => {
     if (!form.elements.note.value.includes(ui().waSet)) {
       form.elements.note.value = (ui().waSet + " " + form.elements.note.value).trim();
     }
@@ -856,7 +853,6 @@
     return new Date((jset + 0.5 - J1970) * dayMs);
   }
   const hm = d => d.toLocaleTimeString("tr-TR", { timeZone: TZ, hour: "2-digit", minute: "2-digit" });
-  const quarter = d => new Date(Math.round(d / 9e5) * 9e5);
 
   function updateLiveInfo() {
     const now = new Date(), u = ui();
@@ -876,7 +872,7 @@
     $("#sunPhase").textContent = u.phase[phase];
     $("#sunsetHint").textContent = tomorrow ? u.sunHintTomorrow : u.sunHint(Math.round((set - now) / 6e4));
 
-    const times = { arrive: quarter(set - 45 * 6e4), sunset: set, oven: quarter(set.getTime() + 60 * 6e4) };
+    const times = { sunset: set };
     $$("[data-eve]").forEach(el => { el.textContent = hm(times[el.dataset.eve]); });
 
     const hour = Number(new Intl.DateTimeFormat("en-GB", { timeZone: TZ, hour: "2-digit", hourCycle: "h23" }).format(now));
