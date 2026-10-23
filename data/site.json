@@ -1,8 +1,10 @@
 {
   "_info": "Cunda Adamis site içeriği. En kolay yol: yönetim paneli (admin.html). Elle düzenlerken JSON biçimini bozmamaya dikkat edin.",
   "contact": {
-    "phone": "+902663271064",
-    "phoneDisplay": "0266 327 10 64",
+    "phone": "+902663271570",
+    "phoneDisplay": "0266 327 15 70",
+    "mobile": "+905070554938",
+    "mobileDisplay": "0507 055 49 38",
     "whatsapp": "905070554938",
     "instagram": "https://www.instagram.com/adamis_cunda/",
     "address": "Mithatpaşa Mah., Halk Caddesi No:4-6, Cunda, 10405 Ayvalık / Balıkesir",
@@ -13,12 +15,63 @@
     "close": "22:30"
   },
   "images": {
-    "hero": "photo-1469796466635-455ede028aca",
     "story": "img/cunda/tas-ev.jpg",
     "storyInset": "img/cunda/gullu-sokak.jpg",
     "story2": "img/cunda/aksamustu-tekne.jpg",
-    "dish": "photo-1596797038530-2c107229654b"
+    "dish": "img/site/sarma.jpg"
   },
+  "heroSlides": [
+    {
+      "src": "img/cunda/seytan-sofrasi.jpg",
+      "tr": "Şeytan Sofrası'ndan Ayvalık adaları",
+      "en": "The Ayvalık islands from Şeytan Sofrası"
+    },
+    {
+      "src": "img/cunda/denizden-cunda.jpg",
+      "tr": "Denizden Cunda",
+      "en": "Cunda from the sea"
+    },
+    {
+      "src": "img/cunda/cunda-zeytinleri.jpg",
+      "tr": "Cunda zeytinlikleri",
+      "en": "Olive groves of Cunda"
+    },
+    {
+      "src": "img/cunda/ayvalik-gunbatimi.jpg",
+      "tr": "Ayvalık'ta gün batımı",
+      "en": "Sunset in Ayvalık"
+    },
+    {
+      "src": "img/cunda/liman-1920.jpg",
+      "tr": "Cunda Limanı",
+      "en": "Cunda harbour"
+    },
+    {
+      "src": "img/cunda/sarimsakli.jpg",
+      "tr": "Sarımsaklı Plajı",
+      "en": "Sarımsaklı beach"
+    },
+    {
+      "src": "img/cunda/ayvalik-zeytinlik.jpg",
+      "tr": "Ayvalık zeytinlikleri, Pelitköy",
+      "en": "Olive groves of Ayvalık, Pelitköy"
+    },
+    {
+      "src": "img/cunda/cunda-sahili.jpg",
+      "tr": "Denizden Cunda sahili",
+      "en": "The Cunda waterfront from the sea"
+    },
+    {
+      "src": "img/cunda/adalar-aksam.jpg",
+      "tr": "Akşam, Ayvalık adaları",
+      "en": "Dusk over the Ayvalık islands"
+    },
+    {
+      "src": "img/cunda/seytan-sofrasi-gunbatimi.jpg",
+      "tr": "Şeytan Sofrası'nda gün batımı",
+      "en": "Sunset at Şeytan Sofrası"
+    }
+  ],
   "rating": {
     "score": "4.2",
     "count": {

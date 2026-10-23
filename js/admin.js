@@ -23,7 +23,6 @@
     ["İletişim & Footer", [["c.title", "İletişim başlığı", 1], ["foot.slogan", "Footer sloganı"]]]
   ];
   const IMAGE_SLOTS = [
-    ["hero", "Giriş – arka plan fotoğrafı", "Geniş, yatay, açık tonlu; en az 1920 px"],
     ["dish", "Giriş – tabaktaki yemek", "Kare, yemeğin üstten çekimi olursa en iyisi"],
     ["story", "Hikâye – büyük polaroid", "Yatay"],
     ["story2", "Hikâye – küçük polaroid", "Yatay veya dikey"],
@@ -237,8 +236,10 @@
     return [
       card("İletişim",
         h("div", { class: "grid2" },
-          field("Telefon (arama için)", () => c.phone, v => c.phone = v, { hint: "Ülke koduyla: +902663271965" }),
-          field("Telefon (sitede görünen)", () => c.phoneDisplay, v => c.phoneDisplay = v, { hint: "Örn. 0266 327 19 65" }),
+          field("Telefon (arama için)", () => c.phone, v => c.phone = v, { hint: "Ülke koduyla: +902663271570" }),
+          field("Telefon (sitede görünen)", () => c.phoneDisplay, v => c.phoneDisplay = v, { hint: "Örn. 0266 327 15 70" }),
+          field("Cep telefonu (arama için)", () => c.mobile, v => c.mobile = v, { hint: "Ülke koduyla: +905070554938" }),
+          field("Cep telefonu (sitede görünen)", () => c.mobileDisplay, v => c.mobileDisplay = v, { hint: "Örn. 0507 055 49 38" }),
           field("WhatsApp numarası", () => c.whatsapp, v => c.whatsapp = v.replace(/\D/g, ""), { hint: "Sadece rakam, 90 ile başlar: 905xxxxxxxxx" }),
           field("Instagram adresi", () => c.instagram, v => c.instagram = v, { hint: "https://www.instagram.com/…" })),
         field("Adres", () => c.address, v => c.address = v),
@@ -255,7 +256,30 @@
     const im = S.site.images = S.site.images || {};
     return [card("Sitedeki ana fotoğraflar",
       h("p", { class: "muted" }, "Yüklediğiniz fotoğraflar otomatik olarak küçültülür. Kaydettikten sonra sitede 1–2 dakikada görünür."),
-      ...IMAGE_SLOTS.map(([key, label, hint]) => imageField(label, () => im[key], v => { im[key] = v; }, { hint, maxW: key === "hero" ? 2200 : 1400, folder: "img/site" })))];
+      ...IMAGE_SLOTS.map(([key, label, hint]) => imageField(label, () => im[key], v => { im[key] = v; }, { hint, maxW: 1400, folder: "img/site" }))),
+      heroSlidesCard()];
+  }
+
+  // Giriş: arkada sırayla kayan ada fotoğrafları
+  function heroSlidesCard() {
+    const L = S.site.heroSlides = S.site.heroSlides || [];
+    const list = h("div", { class: "ggrid" }, ...L.map((sl, i) => h("article", { class: "gcard" },
+      h("div", { class: "gcard__img" }, thumb(sl.src, "")),
+      h("div", { class: "gcard__body" },
+        h("button", { type: "button", class: "btn btn--sm btn--ghost", onclick: async () => {
+          const [file] = await pickFiles(false); if (!file) return;
+          const r = await prepareImage(file, 2200, "img/hero"); sl.src = r.path; markDirty("site"); render();
+        } }, "Fotoğrafı değiştir"),
+        biPair("Yer adı (fotoğrafın altında yazar)", sl),
+        rowTools(L, i, render, "site", { del: "Bu fotoğraf girişten kaldırılsın mı?" })))));
+    return card(`Giriş – kayan ada fotoğrafları (${L.length})`,
+      h("p", { class: "muted" }, "Sitenin en üstünde, başlığın arkasında bu fotoğraflar sırayla kayar. Geniş (yatay) fotoğraflar en iyisidir; en az 1920 px."),
+      h("button", { type: "button", class: "btn btn--add", onclick: async () => {
+        const files = await pickFiles(true);
+        for (const f of files) { const r = await prepareImage(f, 2200, "img/hero"); L.push({ src: r.path, tr: "", en: "" }); }
+        if (files.length) { markDirty("site"); render(); toast(`${files.length} fotoğraf eklendi. Yer adlarını yazıp kaydedin.`); }
+      } }, "+ Fotoğraf yükle"),
+      list);
   }
 
   function tabMetinler() {

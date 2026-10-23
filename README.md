@@ -1,4 +1,4 @@
-# Cunda Adamis — Zeytinyağlı Ev Yemekleri web sitesi
+# Cunda Adamis · Nuray'ın Mutfağı — Zeytinyağlı ve yöresel ev yemekleri web sitesi
 
 **Depo:** https://github.com/sibel464/adamis
 **Önizleme:** https://sibel464.github.io/adamis/ (GitHub Pages açıldıktan sonra)
@@ -29,7 +29,7 @@ Panelden yapılabilenler:
 - Galeri, yorumlar ve puan
 - İletişim bilgileri, çalışma saatleri, ana fotoğraflar, sitedeki tüm başlık ve metinler (TR/EN)
 - Duyuru şeridi ve bölümleri (hikâye, galeri, yorumlar) sitede gizleme/gösterme
-- Fotoğraflar: giriş arka planı, giriş tabağındaki yemek, hikâye polaroidleri
+- Fotoğraflar: girişte sırayla kayan ada fotoğrafları (ekle, sırala, yer adı yaz), tabaktaki yemek, hikâye polaroidleri
 
 ## Yerelde çalıştırma
 Menü `fetch` ile yüklendiği için dosyayı çift tıklayarak değil, bir sunucuyla açın:
@@ -38,7 +38,7 @@ Menü `fetch` ile yüklendiği için dosyayı çift tıklayarak değil, bir sunu
 
 ## Yayına almadan önce kontrol edin
 İletişim bilgileri internetteki işletme kayıtlarından alındı; kaynaklar birbirini tutmuyor:
-- Telefon: sabit hat 0266 327 10 64; WhatsApp için 0507 055 49 38 yazıldı. Hangisi doğru, teyit edin.
+- Telefon: sabit hat 0266 327 15 70, cep ve WhatsApp 0507 055 49 38 (işletme sahibinden alındı).
 - Saatler: 09:00 – 22:30 yazıldı (başka kaynaklarda 10:30 – 23:00 ve 11:30 – 21:00 da geçiyor).
 - Adres: Mithatpaşa Mah., Halk Caddesi No:4-6, Cunda.
 - Instagram: instagram.com/adamis_cunda

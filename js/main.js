@@ -6,7 +6,7 @@
      Telefon, saatler, galeri, etkinlikler, yorumlar ve metin düzeltmeleri data/site.json'dadır
      (yönetim paneli: admin.html). Dosya okunamazsa aşağıdaki temel ayarlarla çalışır. */
   const FALLBACK = {
-    contact: { phone: "+902663271064", phoneDisplay: "0266 327 10 64", whatsapp: "905070554938", instagram: "", address: "", mapsQuery: "" },
+    contact: { phone: "+902663271570", phoneDisplay: "0266 327 15 70", mobile: "+905070554938", mobileDisplay: "0507 055 49 38", whatsapp: "905070554938", instagram: "", address: "", mapsQuery: "" },
     hours: { open: "09:00", close: "22:30" }, images: {}, rating: null, texts: {}, gallery: [], events: null, reviews: []
   };
   let SITE = FALLBACK;
@@ -90,6 +90,7 @@
     fillGuestOptions();
     updateLiveInfo();
     applySite();
+    showSlide(slideIndex, true);
   }));
 
 
@@ -98,7 +99,8 @@
   function applySite() {
     const c = SITE.contact;
     $$('[data-bind="phoneDisplay"]').forEach(el => { el.textContent = c.phoneDisplay; });
-    $$('a[href^="tel:"]').forEach(a => { a.href = "tel:" + c.phone; });
+    $$('a[href^="tel:"]').forEach(a => { a.href = "tel:" + (a.dataset.tel === "mobile" && c.mobile ? c.mobile : c.phone); });
+    if (c.mobileDisplay) $$('[data-bind="mobileDisplay"]').forEach(el => { el.textContent = c.mobileDisplay; });
     if (c.address) $$('[data-bind="address"]').forEach(el => { el.textContent = c.address; });
     $$('[data-bind="hours"]').forEach(el => { el.textContent = hoursText; });
     if (c.mapsQuery) {
@@ -812,12 +814,6 @@
 
   function updateLiveInfo() {
     const now = new Date(), u = ui();
-    let set = sunsetAt(now), tomorrow = false;
-    if (now > set) { set = sunsetAt(new Date(now.getTime() + 864e5)); tomorrow = true; }
-
-    $("#floatSunLabel").textContent = tomorrow ? u.sunTomorrow : u.sunToday;
-    $("#floatSunTime").textContent = hm(set);
-
     // Cunda saati: gün batımından 90 dk önce altın saat, 40 dk sonrasından sabaha kadar gece
     const todaySet = sunsetAt(now), mins = (now - todaySet) / 6e4;
     const istHour = Number(new Intl.DateTimeFormat("en-GB", { timeZone: TZ, hour: "2-digit", hourCycle: "h23" }).format(now));
@@ -841,7 +837,7 @@
     entries.forEach(en => en.isIntersecting ? hideFloatFor.add(en.target) : hideFloatFor.delete(en.target));
     updateFloat();
   }, { threshold: 0.15 });
-  ["#rezervasyon", "#iletisim"].forEach(sel => { const el = $(sel); if (el) floatObserver.observe(el); });
+  ["#rezervasyon", "#iletisim", ".footer"].forEach(sel => { const el = $(sel); if (el) floatObserver.observe(el); });
   function updateFloat() {
     floatBook.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.9 && hideFloatFor.size === 0);
   }
@@ -880,6 +876,54 @@
       hero.addEventListener("pointerleave", () => { hero.style.setProperty("--mx", 0); hero.style.setProperty("--my", 0); });
     }
   }
+
+  /* ============ Giriş: adanın fotoğrafları sürekli kayar ============
+     Fotoğraflar data/site.json → heroSlides listesinden gelir (panel: Görseller); liste yoksa index.html'dekiler kullanılır. */
+  const slidesEl = $("#heroSlides"), dotsEl = $("#heroDots"), placeEl = $("#heroPlace");
+  const SLIDE_MS = 6000;
+  if (Array.isArray(SITE.heroSlides) && SITE.heroSlides.length) {
+    slidesEl.innerHTML = SITE.heroSlides.map((sl, i) => {
+      const src = /^photo-/.test(sl.src) ? img(sl.src, 1920) : sl.src;
+      return `<figure class="slide${i ? "" : " is-active"}" data-tr="${esc(sl.tr || "")}" data-en="${esc(sl.en || sl.tr || "")}">` +
+        `<img ${i ? "data-src" : "src"}="${esc(src)}" alt="${esc(sl.tr || "Cunda")}" decoding="async"${i ? "" : ' fetchpriority="high"'}></figure>`;
+    }).join("");
+  }
+  const slides = $$(".slide", slidesEl);
+  let slideIndex = 0, slideTimer = null;
+  const loadSlide = el => { const im = el && $("img", el); if (im && im.dataset.src) { im.src = im.dataset.src; im.removeAttribute("data-src"); } };
+  dotsEl.innerHTML = slides.map((s, i) => `<button type="button" class="hero__dot" aria-label="${i + 1}"></button>`).join("");
+  const dots = $$(".hero__dot", dotsEl);
+  function showSlide(i, quiet) {
+    const n = slides.length;
+    i = (i + n) % n;
+    if (i !== slideIndex) {
+      const prev = slides[slideIndex], next = slides[i];
+      slides.forEach(s => { if (s !== prev) s.classList.remove("is-leaving"); });
+      prev.classList.remove("is-active");
+      prev.classList.add("is-leaving");
+      // eski fotoğraf, yenisi tamamen gelene kadar arkada kalır
+      const done = e => {
+        if (e.target !== next || e.propertyName !== "transform") return;
+        next.removeEventListener("transitionend", done);
+        if (!prev.classList.contains("is-active")) prev.classList.remove("is-leaving");
+      };
+      next.addEventListener("transitionend", done);
+    }
+    slideIndex = i;
+    loadSlide(slides[i]);
+    slides[i].classList.add("is-active");
+    loadSlide(slides[(i + 1) % n]);   // bir sonrakini önceden indir
+    dots.forEach((d, j) => d.setAttribute("aria-pressed", String(j === i)));
+    if (placeEl) placeEl.textContent = slides[i].dataset[lang] || slides[i].dataset.tr || "";
+    if (!quiet) restartSlides();
+  }
+  function restartSlides() {
+    clearInterval(slideTimer);
+    if (reduceMotion || slides.length < 2) return;
+    slideTimer = setInterval(() => { if (!document.hidden) showSlide(slideIndex + 1, true); }, SLIDE_MS);
+  }
+  dots.forEach((d, j) => d.addEventListener("click", () => showSlide(j)));
+  showSlide(0);
 
   /* ============ Başlat ============ */
   $("#year").textContent = today.getFullYear();
