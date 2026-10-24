@@ -14,7 +14,7 @@
       "name": {"tr": "Zeytinyağlılar", "en": "Olive Oil Dishes"},
       "note": {"tr": "Soğuk servis edilir; tabak tek çeşit ya da karışık hazırlanabilir", "en": "Served cold; as a single dish or a mixed plate"},
       "items": [
-        {"name": {"tr": "Kabak Çiçeği Dolması", "en": "Stuffed Zucchini Flowers"}, "desc": {"tr": "Cunda'nın meşhuru; pirinç, taze nane ve dereotuyla, zeytinyağında", "en": "Cunda's favourite: rice, fresh mint and dill, cooked in olive oil"}, "price": 320, "tags": ["sef", "vegan"]},
+        {"name": {"tr": "Kabak Çiçeği Dolması", "en": "Stuffed Zucchini Flowers"}, "desc": {"tr": "Cunda'nın meşhuru; pirinç, taze nane ve dereotuyla, zeytinyağında", "en": "Cunda's favourite: rice, fresh mint and dill, cooked in olive oil"}, "price": 320, "tags": ["sef", "vegan"], "image": "img/menu/kabak-cicegi-dolmasi.jpg"},
         {"name": {"tr": "Yaprak Sarma", "en": "Stuffed Vine Leaves"}, "desc": {"tr": "El sarması asma yaprağı, limon ve zeytinyağı", "en": "Hand-rolled vine leaves with lemon and olive oil"}, "price": 280, "tags": ["favori", "vegan"]},
         {"name": {"tr": "Zeytinyağlı Enginar", "en": "Artichokes in Olive Oil"}, "desc": {"tr": "Bezelye, havuç ve dereotuyla", "en": "With peas, carrots and dill"}, "price": 300, "tags": ["vegan", "glutensiz"], "image": "img/menu/zeytinyagli-enginar.jpg"},
         {"name": {"tr": "Taze Fasulye", "en": "Green Beans in Olive Oil"}, "desc": {"tr": "Domates ve soğanla ağır ateşte", "en": "Slow-cooked with tomato and onion"}, "price": 240, "tags": ["vegan", "glutensiz"]},
