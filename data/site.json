@@ -17,7 +17,7 @@
   "images": {
     "story": "img/site/adamis-tabela.jpg",
     "storyInset": "img/cunda/gullu-sokak.jpg",
-    "story2": "img/cunda/aksamustu-tekne.jpg",
+    "story2": "img/site/adamis-pano-yakin.jpg",
     "dish": "img/site/sarma.jpg"
   },
   "heroSlides": [
@@ -148,6 +148,13 @@
       "h": 1400,
       "tr": "2010'dan beri Adamis",
       "en": "Adamis, since 2010"
+    },
+    {
+      "src": "img/site/adamis-pano.jpg",
+      "w": 1050,
+      "h": 1400,
+      "tr": "Tek rakibimiz, anneniz",
+      "en": "Our only rival: your mum"
     },
     {
       "src": "img/site/adamis-duvar.jpg",
