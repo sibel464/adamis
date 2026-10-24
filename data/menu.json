@@ -16,13 +16,14 @@
       "items": [
         {"name": {"tr": "Kabak Çiçeği Dolması", "en": "Stuffed Zucchini Flowers"}, "desc": {"tr": "Cunda'nın meşhuru; pirinç, taze nane ve dereotuyla, zeytinyağında", "en": "Cunda's favourite: rice, fresh mint and dill, cooked in olive oil"}, "price": 320, "tags": ["sef", "vegan"]},
         {"name": {"tr": "Yaprak Sarma", "en": "Stuffed Vine Leaves"}, "desc": {"tr": "El sarması asma yaprağı, limon ve zeytinyağı", "en": "Hand-rolled vine leaves with lemon and olive oil"}, "price": 280, "tags": ["favori", "vegan"]},
-        {"name": {"tr": "Zeytinyağlı Enginar", "en": "Artichokes in Olive Oil"}, "desc": {"tr": "Bezelye, havuç ve dereotuyla", "en": "With peas, carrots and dill"}, "price": 300, "tags": ["vegan", "glutensiz"], "image": "photo-1604909052743-94e838986d24"},
+        {"name": {"tr": "Zeytinyağlı Enginar", "en": "Artichokes in Olive Oil"}, "desc": {"tr": "Bezelye, havuç ve dereotuyla", "en": "With peas, carrots and dill"}, "price": 300, "tags": ["vegan", "glutensiz"], "image": "img/menu/zeytinyagli-enginar.jpg"},
         {"name": {"tr": "Taze Fasulye", "en": "Green Beans in Olive Oil"}, "desc": {"tr": "Domates ve soğanla ağır ateşte", "en": "Slow-cooked with tomato and onion"}, "price": 240, "tags": ["vegan", "glutensiz"]},
         {"name": {"tr": "Barbunya Pilaki", "en": "Borlotti Bean Pilaki"}, "desc": {"tr": "Havuç, patates ve sarımsakla", "en": "With carrot, potato and garlic"}, "price": 240, "tags": ["vegan", "glutensiz"]},
         {"name": {"tr": "İmam Bayıldı", "en": "İmam Bayıldı"}, "desc": {"tr": "Soğan ve domatesle doldurulmuş patlıcan", "en": "Aubergine filled with onion and tomato"}, "price": 280, "tags": ["vegan", "glutensiz"], "image": "photo-1476224203421-9ac39bcb3327"},
         {"name": {"tr": "Zeytinyağlı Pırasa", "en": "Leeks in Olive Oil"}, "desc": {"tr": "Havuç ve az pirinçle, limonlu", "en": "With carrot, a little rice and lemon"}, "price": 220, "tags": ["vegan"]},
         {"name": {"tr": "Girit Kabağı", "en": "Cretan Courgettes"}, "desc": {"tr": "Domates ve sarımsakla, zeytinyağında", "en": "With tomato and garlic, cooked in olive oil"}, "price": 240, "tags": ["vegan", "glutensiz"], "image": "img/menu/girit-kabagi.jpg"},
         {"name": {"tr": "Karışık Kızartma Tabağı", "en": "Mixed Fried Vegetable Plate"}, "desc": {"tr": "Patlıcan, patates ve biber kızartması; sarımsaklı domates sosuyla", "en": "Fried aubergine, potato and pepper with garlicky tomato sauce"}, "price": 280, "tags": ["vejetaryen"], "image": "img/menu/karisik-kizartma.jpg"},
+        {"name": {"tr": "Kabak Mücveri", "en": "Courgette Fritters"}, "desc": {"tr": "Taze otlarla kızartılır, sarımsaklı yoğurtla", "en": "Fried with fresh herbs, served with garlic yoghurt"}, "price": 260, "tags": ["vejetaryen"], "image": "img/menu/mucver.jpg"},
         {"name": {"tr": "Karışık Zeytinyağlı Tabağı", "en": "Mixed Olive Oil Plate"}, "desc": {"tr": "Günün zeytinyağlılarından dört çeşit", "en": "Four of the day's olive oil dishes"}, "price": 420, "tags": ["favori", "vegan"], "image": "img/menu/karisik-zeytinyagli.jpg"}
       ]
     },

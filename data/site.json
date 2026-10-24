@@ -15,7 +15,7 @@
     "close": "22:30"
   },
   "images": {
-    "story": "img/cunda/tas-ev.jpg",
+    "story": "img/site/adamis-tabela.jpg",
     "storyInset": "img/cunda/gullu-sokak.jpg",
     "story2": "img/cunda/aksamustu-tekne.jpg",
     "dish": "img/site/sarma.jpg"
@@ -142,6 +142,13 @@
   },
   "texts": {},
   "gallery": [
+    {
+      "src": "img/site/adamis-tabela.jpg",
+      "w": 1050,
+      "h": 1400,
+      "tr": "2010'dan beri Adamis",
+      "en": "Adamis, since 2010"
+    },
     {
       "src": "img/site/adamis-duvar.jpg",
       "w": 1106,
