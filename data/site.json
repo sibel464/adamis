@@ -27,14 +27,34 @@
       "en": "The Ayvalık islands from Şeytan Sofrası"
     },
     {
+      "src": "img/cunda/cunda-tepe-degirmen.jpg",
+      "tr": "Cunda tepesinde yel değirmeni",
+      "en": "Windmill on the Cunda hilltop"
+    },
+    {
+      "src": "img/cunda/cunda-tas-ev.jpg",
+      "tr": "Cunda'nın taş evleri",
+      "en": "Stone houses of Cunda"
+    },
+    {
       "src": "img/cunda/denizden-cunda.jpg",
       "tr": "Denizden Cunda",
       "en": "Cunda from the sea"
     },
     {
+      "src": "img/cunda/cunda-gunbatimi.jpg",
+      "tr": "Cunda'dan gün batımı",
+      "en": "Sunset from Cunda"
+    },
+    {
       "src": "img/cunda/cunda-zeytinleri.jpg",
       "tr": "Cunda zeytinlikleri",
       "en": "Olive groves of Cunda"
+    },
+    {
+      "src": "img/cunda/cunda-rum-evleri.jpg",
+      "tr": "Cunda'nın eski Rum evleri",
+      "en": "Old Greek houses of Cunda"
     },
     {
       "src": "img/cunda/ayvalik-gunbatimi.jpg",
@@ -47,9 +67,19 @@
       "en": "Cunda harbour"
     },
     {
+      "src": "img/cunda/cunda-catilar-adalar.jpg",
+      "tr": "Cunda çatılarından Ayvalık adaları",
+      "en": "The Ayvalık islands over Cunda's rooftops"
+    },
+    {
       "src": "img/cunda/sarimsakli.jpg",
       "tr": "Sarımsaklı Plajı",
       "en": "Sarımsaklı beach"
+    },
+    {
+      "src": "img/cunda/seytan-sofrasi-aksam.jpg",
+      "tr": "Şeytan Sofrası'ndan akşam",
+      "en": "Evening from Şeytan Sofrası"
     },
     {
       "src": "img/cunda/ayvalik-zeytinlik.jpg",
@@ -57,9 +87,19 @@
       "en": "Olive groves of Ayvalık, Pelitköy"
     },
     {
-      "src": "img/cunda/cunda-sahili.jpg",
-      "tr": "Denizden Cunda sahili",
-      "en": "The Cunda waterfront from the sea"
+      "src": "img/cunda/cunda-cicekli-kapi.jpg",
+      "tr": "Cunda'da begonvilli bir kapı",
+      "en": "A bougainvillea-framed door in Cunda"
+    },
+    {
+      "src": "img/cunda/cunda-taksiyarhis.jpg",
+      "tr": "Cunda çatıları ve Taksiyarhis Kilisesi",
+      "en": "Cunda rooftops and the Taksiyarhis Church"
+    },
+    {
+      "src": "img/cunda/cunda-limani-tekneler.jpg",
+      "tr": "Cunda limanında balıkçı tekneleri",
+      "en": "Fishing boats in Cunda harbour"
     },
     {
       "src": "img/cunda/adalar-aksam.jpg",
@@ -67,9 +107,29 @@
       "en": "Dusk over the Ayvalık islands"
     },
     {
+      "src": "img/cunda/cunda-kapilari.jpg",
+      "tr": "Cunda'nın renkli kapıları",
+      "en": "The colourful doors of Cunda"
+    },
+    {
       "src": "img/cunda/seytan-sofrasi-gunbatimi.jpg",
       "tr": "Şeytan Sofrası'nda gün batımı",
       "en": "Sunset at Şeytan Sofrası"
+    },
+    {
+      "src": "img/cunda/cunda-yel-degirmeni.jpg",
+      "tr": "Cunda'da yel değirmeni",
+      "en": "Windmill in Cunda"
+    },
+    {
+      "src": "img/cunda/cunda-sokak.jpg",
+      "tr": "Cunda'nın sokakları",
+      "en": "The streets of Cunda"
+    },
+    {
+      "src": "img/cunda/cunda-arnavut-kaldirimi.jpg",
+      "tr": "Cunda'da Arnavut kaldırımlı sokak",
+      "en": "A cobbled street in Cunda"
     }
   ],
   "rating": {

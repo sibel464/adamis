@@ -15,15 +15,14 @@
   // Metinler sekmesinde düzenlenebilen alanlar (anahtarlar index.html'deki data-i18n değerleridir)
   const TEXT_GROUPS = [
     ["Giriş", [["hero.eyebrow", "Üst satır"], ["hero.title", "Başlık", 1], ["hero.lead", "Alt metin", 2]]],
-    ["Hikâyemiz", [["story.title", "Başlık", 1], ["story.p1", "1. paragraf", 2], ["story.p2", "2. paragraf", 2], ["story.sign", "İmza"],
-      ["story.note1", "El yazısı not (fotoğrafların altı)"], ["story.note2", "El yazısı not (sağdaki fotoğraf)"],
+    ["Hikâyemiz", [["story.title", "Başlık", 1], ["story.p1", "1. paragraf", 2], ["story.p2", "2. paragraf", 2], ["story.sign", "İmza"], ["story.daily", "İmzanın yanındaki not"],
+      ["story.note1", "El yazısı not (fotoğrafların altı)"],
       ["feat.1.t", "Özellik 1"], ["feat.2.t", "Özellik 2"], ["feat.3.t", "Özellik 3"], ["feat.4.t", "Özellik 4"]]],
     ["Menü", [["menu.title", "Başlık"], ["menu.lead", "Alt metin", 2], ["menu.allergen", "Alerjen notu"]]],
     ["Rezervasyon", [["res.title", "Başlık", 1], ["res.p", "Metin", 2]]],
     ["İletişim & Footer", [["c.title", "İletişim başlığı", 1], ["foot.slogan", "Footer sloganı"]]]
   ];
   const IMAGE_SLOTS = [
-    ["dish", "Giriş – tabaktaki yemek", "Kare, yemeğin üstten çekimi olursa en iyisi"],
     ["story", "Hikâye – büyük polaroid", "Yatay"],
     ["story2", "Hikâye – küçük polaroid", "Yatay veya dikey"],
     ["storyInset", "Hikâye – sağdaki fotoğraf", "Yatay"]

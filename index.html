@@ -98,7 +98,6 @@
         <figure class="slide" data-tr="Cunda Limanı" data-en="Cunda harbour"><img data-src="img/cunda/liman-1920.jpg" decoding="async" width="1920" height="1285" alt="Cunda limanı ve kıyıdaki eski taş binalar"></figure>
         <figure class="slide" data-tr="Sarımsaklı Plajı" data-en="Sarımsaklı beach"><img data-src="img/cunda/sarimsakli.jpg" decoding="async" width="1920" height="1200" alt="Ayvalık Sarımsaklı Plajı'nda kum ve deniz"></figure>
         <figure class="slide" data-tr="Ayvalık zeytinlikleri, Pelitköy" data-en="Olive groves of Ayvalık, Pelitköy"><img data-src="img/cunda/ayvalik-zeytinlik.jpg" decoding="async" width="1600" height="784" alt="Ayvalık'ın Pelitköy'ünde sıra sıra zeytin ağaçları"></figure>
-        <figure class="slide" data-tr="Denizden Cunda sahili" data-en="The Cunda waterfront from the sea"><img data-src="img/cunda/cunda-sahili.jpg" decoding="async" width="1920" height="1200" alt="Denizden görünen Cunda sahili ve eski konaklar"></figure>
         <figure class="slide" data-tr="Akşam, Ayvalık adaları" data-en="Dusk over the Ayvalık islands"><img data-src="img/cunda/adalar-aksam.jpg" decoding="async" width="1920" height="1200" alt="Alacakaranlıkta Ayvalık adaları ve demirli tekneler"></figure>
         <figure class="slide" data-tr="Şeytan Sofrası'nda gün batımı" data-en="Sunset at Şeytan Sofrası"><img data-src="img/cunda/seytan-sofrasi-gunbatimi.jpg" decoding="async" width="1920" height="1200" alt="Şeytan Sofrası'ndan adaların üzerinde gün batımı"></figure>
       </div>
@@ -173,9 +172,12 @@
               <circle cx="100" cy="100" r="78" fill="none" stroke="#2c5d78" stroke-width="1.6"/>
               <circle cx="100" cy="100" r="75" fill="none" stroke="#b4532f" stroke-width=".9"/>
             </svg>
-            <div class="dish__plate"><img data-img="dish" src="img/site/sarma.jpg" width="1000" height="1000" alt="Zeytinyağlı yaprak sarma ve limon"></div>
-            <p class="dish__tag"><span data-i18n="dish.tag">Tek rakibimiz,<br>anneniz.</span></p>
-            <p class="dish__seal"><strong>16</strong><span data-i18n="dish.seal">senelik<br>emek</span></p>
+            <div class="dish__words" id="dishWords" aria-hidden="true">
+              <p class="is-on" data-i18n="dish.w1">Tek rakibimiz,<br>anneniz.</p>
+              <p data-i18n="dish.w2"><b>16</b>senelik<br>hizmet</p>
+              <p data-i18n="dish.w3"><b>16</b>senelik<br>memnuniyet</p>
+              <p data-i18n="dish.w4"><b>16</b>senelik<br><em>EMEK</em></p>
+            </div>
           </div>
         </div>
         <ul class="infobar infobar--r">
@@ -212,12 +214,10 @@
           <h2 class="h2 band__title" data-i18n="story.title">Adanın kalbinde, bir ev yemeği <em>hikâyesi…</em></h2>
           <p data-i18n="story.p1">Adamis, Cunda'nın taş sokaklarında, denize yakın huzurlu bir köşe. Mutfakta 16 senedir Nuray var; annesinden, komşusundan öğrendiği tariflerle zeytinyağlıları ve adanın yöresel yemeklerini pişiriyor.</p>
           <p data-i18n="story.p2">Ayvalık zeytinyağı, Ege otları, mevsiminde sebze. Zeytinyağlılar sabah pişer, tencereler gün boyu ocaktan iner; o gün ne pişmişse tezgâhta o var.</p>
-          <p class="story__sign" data-i18n="story.sign">— Nuray'ın mutfağı</p>
-          <ul class="sixteen" aria-label="16 sene">
-            <li><strong>16</strong><span data-i18n="six.1">senelik hizmet</span></li>
-            <li><strong>16</strong><span data-i18n="six.2">senelik memnuniyet</span></li>
-            <li><strong>16</strong><span data-i18n="six.3">senelik <b>emek</b></span></li>
-          </ul>
+          <div class="story__foot">
+            <p class="story__sign" data-i18n="story.sign">— Nuray'ın mutfağı</p>
+            <p class="story__daily" data-i18n="story.daily">Yemekler<br><b>her gün</b> değişir.</p>
+          </div>
         </div>
         <ul class="band__features reveal">
           <li><span class="band__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-leaf"/></svg></span><strong data-i18n="feat.1.t">Doğal ve taze malzemeler</strong></li>
@@ -227,7 +227,6 @@
         </ul>
         <div class="band__side reveal">
           <figure class="torn"><img data-img="storyInset" src="img/cunda/gullu-sokak.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Cunda'da güllerle bezeli bir sokak"></figure>
-          <p class="hand hand--side" data-i18n="story.note2">Tek rakibimiz,<br>anneniz.</p>
           <a href="#rezervasyon" class="brush-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span><small data-i18n="story.cta">Rezervasyon için</small><strong data-i18n="cta.book">Masa Ayırt</strong></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>

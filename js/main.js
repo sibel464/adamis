@@ -925,6 +925,16 @@
   dots.forEach((d, j) => d.addEventListener("click", () => showSlide(j)));
   showSlide(0);
 
+  /* tabağın ortasındaki sözler sırayla belirir */
+  const words = $$("#dishWords p");
+  let wordIndex = 0;
+  if (words.length > 1 && !reduceMotion) setInterval(() => {
+    if (document.hidden) return;
+    words[wordIndex].classList.remove("is-on");
+    wordIndex = (wordIndex + 1) % words.length;
+    words[wordIndex].classList.add("is-on");
+  }, 3200);
+
   /* ============ Başlat ============ */
   $("#year").textContent = today.getFullYear();
   applyLang();
